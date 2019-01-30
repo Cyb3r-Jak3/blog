@@ -1,0 +1,135 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<h1 id="galada-easy-simple-theme-for-personal-blog">Galada - Easy &amp; Simple Theme for Personal Blog</h1>
+<p>Galada is an easy and simple theme for Jekyll. Dark colors, give it a special exquisite look. A careful approach to design and features make it an ideal solution for a personal blog.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#demo">Demo</a></li>
+<li><a href="#deployment">Deployment</a></li>
+<li><a href="#posts">Posts</a></li>
+<li><a href="#DisqusComments">Disqus Comments</a></li>
+<li><a href="#instagram">Instagram</a></li>
+<li><a href="#GoogleAnalytics">Google Analytics</a></li>
+<li><a href="#UpdateFavicon">Update favicon</a></li>
+<li><a href="#Credits">Credits</a></li>
+<li><a href="#Support">Support</a></li>
+</ul>
+<hr />
+<h3 id="features">Features</h3>
+<ul>
+<li>
+<p>100% responsive and clean theme</p>
+</li>
+<li>
+<p>Optimized for mobile devices</p>
+</li>
+<li>
+<p>Minimal design</p>
+</li>
+<li>
+<p>Valid HTML5 code</p>
+</li>
+<li>
+<p>Post sharing</p>
+</li>
+<li>
+<p>Subscription form</p>
+</li>
+<li>
+<p>Supports Disqus Comments</p>
+</li>
+<li>
+<p>Instagram Feed</p>
+</li>
+<li>
+<p>Ionicons Icons</p>
+</li>
+<li>
+<p>Google Fonts</p>
+</li>
+</ul>
+<hr />
+<h3 id="demo">Demo</h3>
+<p>Check the theme in action <a href="https://artemsheludko.github.io/galada/">Demo</a></p>
+<p><img alt="Main page preview" src="https://github.com/artemsheludko/galada/blob/master/img/galada-main-page.jpg?raw=true" /></p>
+<p>The post page would look like this:</p>
+<p><img alt="Post page preview" src="https://github.com/artemsheludko/galada/blob/master/img/galada-post.jpg?raw=true" /></p>
+<hr />
+<h3 id="deployment">Deployment</h3>
+<p>To run the theme locally, navigate to the theme directory and run <code>bundle install</code> to install the dependencies, then run <code>jekyll serve</code> or <code>bundle exec jekyll serve</code> to start the Jekyll server.</p>
+<p>I would recommend checking the <a href="https://jekyllrb.com/docs/deployment-methods/">Deployment Methods</a> page on Jekyll website.</p>
+<hr />
+<h3 id="posts">Posts</h3>
+<p>To create a new post, you can create a new markdown file inside the _posts directory by following the <a href="https://jekyllrb.com/docs/posts/#creating-post-files">recommended file structure</a>.</p>
+<pre><code>  ---
+  layout: post
+  title: Premiere on Broadway
+  date: 2018-08-23 16:04:00 +0300
+  image: 03.jpg
+  tags: [Rest]
+  ---
+</code></pre>
+<p>You can set the tags and the post image.</p>
+<p>Add post images to <strong>/img/</strong> directory.</p>
+<p>For tags, try to not add space between two words, for example, <code>Ruby on Rails</code>, could be something like (<code>ruby-on-rails</code>, <code>Ruby_on_Rails</code>, or <code>Ruby-on-Rails</code>).</p>
+<hr />
+<h3 id="disqus-comments">Disqus Comments</h3>
+<p>Galada Theme comes with Disqus comments enabled.</p>
+<p>Open <code>_config.yml</code> file, and change the <code>mr-brown</code> value on line 26 with your <a href="https://help.disqus.com/customer/portal/articles/466208">Disqus account shortname</a>.</p>
+<pre><code>  Comment Section (Disqus)
+  disqus-identifier: mr-brown \# Add your shortname for Disqus Comment. For example mr-brown
+</code></pre>
+<p>Thatâ€™s all you need to setup Disqus from the theme side. If you get any issue regarding that comments are unable to load. First, make sure you have <a href="https://help.disqus.com/customer/portal/articles/466182-publisher-quick-start-guide">registered your website with Disqus (Step 1)</a>.</p>
+<p>And also check <a href="https://help.disqus.com/customer/portal/articles/472007-i-m-receiving-the-message-%22we-were-unable-to-load-disqus-%22">Disqus troubleshooting guide</a> if you still have issues.</p>
+<hr />
+<h3 id="instagram">Instagram</h3>
+<p>The Instagram feed is working using <a href="http://instafeedjs.com/">Instafeed.js</a> to show the photos.</p>
+<p>First, you will need to get your account <code>userId</code> and <code>accessToken</code> from the following URLs:</p>
+<ul>
+<li>userId: <a href="https://smashballoon.com/instagram-feed/find-instagram-user-id/">smashballoon.com/instagram-feed/find-instagram-user-id</a></li>
+<li>accessToken: <a href="http://instagram.pixelunion.net/">instagram.pixelunion.net</a></li>
+</ul>
+<p>Second, open the <code>js/common.js</code> file and replace the <code>userId</code> and <code>accessToken</code> values.</p>
+<pre><code>        var instagramFeed = new Instafeed({
+          get: 'user',
+          limit: 6,
+          resolution: 'standard_resolution',
+          userId: '8987997106',
+          accessToken: '8987997106.924f677.8555ecbd52584f41b9b22ec1a16dafb9',
+          template: ''
+        });
+</code></pre>
+<p>Third, open the <code>_config.yml</code> file and replace the <code>instafeed: false</code> on <code>instafeed: true</code> value.</p>
+<pre><code>        \# Instagram Feed
+        instafeed: false \# To enable the instafeed, use the value true. To turn off use the value false.
+</code></pre>
+<hr />
+<h3 id="google-analytics">Google Analytics</h3>
+<p>To integrate Google Analytics, open <code>_config.yml</code>, and add your Google Analytics identifier.</p>
+<pre><code>\# Google Analytics
+google-analytics: \# Add your identifier. For example UA-99631805-1
+</code></pre>
+<hr />
+<h3 id="update-favicon">Update favicon</h3>
+<p>You can find the current favicon (favicon.ico) inside the theme root directory, just replace it with your new favicon.</p>
+<hr />
+<h3 id="credits">Credits</h3>
+<p>I have used the following scripts, fonts or other files as listed.</p>
+<ul>
+<li><a href="https://fonts.google.com/specimen/Nunito">Google Fonts</a> (Nunito, Sans Serif).</li>
+<li><a href="https://ionicons.com/">Ionicons Icons</a></li>
+<li><a href="http://fitvidsjs.com/">FitVids.js</a></li>
+<li><a href="http://instafeedjs.com/">Instafeed.js</a></li>
+<li><a href="https://jquery.com/">jQuery.com</a></li>
+<li><a href="https://github.com/alexanderdickson/waitForImages">Wait For Images</a></li>
+<li>Preview Images form <a href="https://unsplash.com/">unsplash.com</a>, <a href="https://www.pexels.com/">pexels.com</a></li>
+</ul>
+<hr />
+<h3 id="license">License</h3>
+<p>Mit License</p>
+<hr />
+<h3 id="support">Support</h3>
+<p><p>If you want to show your appreciation, buy me one <a href="https://www.buymeacoffee.com/artemsheludko" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a> Either way, your support is a way to thank me â�¤ï¸�</p>
+<p align="center"><b>Thank you for your support!</b></p></p>
+</body></html>

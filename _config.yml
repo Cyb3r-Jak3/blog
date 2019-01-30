@@ -1,0 +1,61 @@
+#-------------------------------
+# General Site Settings
+
+title: Jacob White Blog
+description: Welcome to tech blog where I mostly rant about things cyber related. I also plan on put tutorials and walkthroughs here as well.  # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://blog.jwhite.network" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+#-------------------------------
+# About Section
+author-name:   Jacob White
+author-avatar: about.jpg
+
+
+#-------------------------------
+# Social links
+social:
+  name: Jacob White
+  links:
+    - https://github.com/jwhite1st/
+    - https://www.linkedin.com/in/jacob-white-01
+
+
+#-------------------------------
+# Comment Section (Disqus)
+disqus-identifier: One-Cool-User # Add your shortname for Disqus Comment. For example mr-brown
+
+
+#-------------------------------
+# Build settings
+markdown: kramdown
+permalink: ':title/'
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+#  - jekyll-admin
+  - jekyll-seo-tag
+  - jekyll-feed
+
+paginate: 7
+paginate_path: "/page/:num"
+
+include:
+  - _pages
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+
+#-------------------------------
+# Exclude from processing.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
