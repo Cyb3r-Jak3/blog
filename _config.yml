@@ -48,6 +48,11 @@ sass:
   sass_dir: _sass
   style: compressed
 
+webrick:
+  headers: 
+    Content-Security-Policy: "default-src * ; script-src 'self' 'unsafe-inline' http://visitor.disqus.com/embed.js ; style-src * 'unsafe-inline'; img-src 'self'; font-src 'self' https://fonts.gstatic.com/s/nunito/v9/XRXV3I6Li01BKofIOuaBXso.woff2 https://fonts.gstatic.com/s/nunito/v9/XRXV3I6Li01BKofIO-aBXso.woff2 https://fonts.gstatic.com/s/nunito/v9/XRXV3I6Li01BKofINeaB.woff2 https://fonts.gstatic.com/s/nunito/v9/XRXW3I6Li01BKofAjsOUbuvISTs.woff2 https://fonts.gstatic.com/s/nunito/v9/XRXW3I6Li01BKofAjsOUb-vISTs.woff2 https://fonts.gstatic.com/s/nunito/v9/XRXW3I6Li01BKofAjsOUYevI.woff2 ; media-src 'self' ; object-src 'none'; reflected-xss block; base-uri 'self'; frame-ancestors 'none' ; report-uri https://jwhite.report-uri.com/r/d/csp/enforce;"
+
+     
 
 #-------------------------------
 # Exclude from processing.

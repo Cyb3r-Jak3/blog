@@ -104,7 +104,7 @@ $(function() {
 
   /* =======================
   // Instagram Feed
-  ======================= */
+  ======================= 
   // userId and accessToken from Matthew Elsom (https://codepen.io/matthewelsom/pen/zrrrLN) for example, for which he thanks a lot!
   var instagramFeed = new Instafeed({
     get: 'user',
@@ -118,7 +118,7 @@ $(function() {
 
   if ($('#instafeed').length) {
     instagramFeed.run();
-  }
+  } */
 
 
   /* =======================
