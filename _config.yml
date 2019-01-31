@@ -1,22 +1,13 @@
 #-------------------------------
 # General Site Settings
 
-<<<<<<< HEAD
 title: Jacob White Blog
 description: Welcome to tech blog where I mostly rant about things cyber related. I also plan on put tutorials and walkthroughs here as well.  # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.jwhite.network" # the base hostname & protocol for your site, e.g. http://example.com
-=======
-title: Galada Theme | Theme for Jekyll
-description: Galada is an easy and simple theme for Jekyll. Dark colors, give it a special exquisite look. A careful approach to design and features make it an ideal solution for a personal blog. # this means to ignore newlines until "baseurl:"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
->>>>>>> 776e49c058ae2b24650ad4ab858a9fba58991c92
-
 
 #-------------------------------
 # About Section
-<<<<<<< HEAD
 author-name:   Jacob White
 author-avatar: about.jpg
 
@@ -28,42 +19,11 @@ social:
   links:
     - https://github.com/jwhite1st/
     - https://www.linkedin.com/in/jacob-white-01
-=======
-author-name:   Natali Anderson
-author-avatar: 09.jpg
-
-
-#-------------------------------
-# Contact links
-facebook:  https://facebook.com/ # Add your Facebook handle
-twitter:   https://twitter.com/ # Add your Facebook handle
-instagram: https://www.instagram.com/ # Add your Facebook handle
-pinterest: https://www.pinterest.com/ # Add your Facebook handle
->>>>>>> 776e49c058ae2b24650ad4ab858a9fba58991c92
 
 
 #-------------------------------
 # Comment Section (Disqus)
-<<<<<<< HEAD
-disqus-identifier: One-Cool-User # Add your shortname for Disqus Comment. For example mr-brown
-=======
-disqus-identifier: mr-brown # Add your shortname for Disqus Comment. For example mr-brown
-
-
-#-------------------------------
-# Instagram Feed
-instafeed: false # To enable the instafeed, use the value true. To turn off use the value false.
-
-
-#-------------------------------
-# Google Analytics
-google-analytics: # Add your identifier. For example UA-99631805-1.
-
-
-#-------------------------------
-# Newsletter
-mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
->>>>>>> 776e49c058ae2b24650ad4ab858a9fba58991c92
+disqus-identifier: Visitor # Add your shortname for Disqus Comment. For example mr-brown
 
 
 #-------------------------------
@@ -73,12 +33,10 @@ permalink: ':title/'
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-<<<<<<< HEAD
 #  - jekyll-admin
   - jekyll-seo-tag
   - jekyll-feed
-=======
->>>>>>> 776e49c058ae2b24650ad4ab858a9fba58991c92
+
 
 paginate: 7
 paginate_path: "/page/:num"
