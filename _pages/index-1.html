@@ -1,0 +1,82 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Style Guide </title></head><body>
+<p>A paragraph looks like this — dolor amet cray stumptown fingerstache neutra food truck seitan poke cardigan waistcoat VHS snackwave celiac hella. Godard seitan shoreditch flexitarian next level trust fund man braid vegan listicle keytar bitters. Disrupt cray fashion axe unicorn lomo shaman poke glossier keffiyeh snackwave austin tattooed seitan hexagon lo-fi. Lumbersexual irony vaporware, butcher shaman church-key iceland.</p>
+<h3 id="headings-by-default">Headings by default:</h3>
+<h1 id="h1-for-example">H1 For example</h1>
+<h2 id="h2-for-example">H2 For example</h2>
+<h3 id="h3-for-example">H3 For example</h3>
+<h4 id="h4-for-example">H4 For example</h4>
+<h5 id="h5-for-example">H5 For example</h5>
+<h6 id="h6-for-example">H6 For example</h6>
+<p>{% highlight markdown %}</p>
+<h2 id="heading-first-level">Heading first level</h2>
+<h3 id="heading-second-level">Heading second level</h3>
+<h4 id="heading-third-level">Heading third level</h4>
+<p>{% endhighlight %}</p>
+<hr />
+<h3 id="lists">Lists</h3>
+<h4 id="ordered-list-example">Ordered list example:</h4>
+<ol>
+<li>Poutine drinking vinegar bitters.</li>
+<li>Coloring book distillery fanny pack.</li>
+<li>Venmo biodiesel gentrify enamel pin meditation.</li>
+<li>Jean shorts shaman listicle pickled portland.</li>
+<li>Salvia mumblecore brunch iPhone migas.</li>
+</ol>
+<hr />
+<h4 id="unordered-list-example">Unordered list example:</h4>
+<ul>
+<li>Bitters semiotics vice thundercats synth.</li>
+<li>Literally cred narwhal bitters wayfarers.</li>
+<li>Kale chips chartreuse paleo tbh street art marfa.</li>
+<li>Mlkshk polaroid sriracha brooklyn.</li>
+<li>Pug you probably haven't heard of them air plant man bun.</li>
+</ul>
+<p>{% highlight markdown %}
+1. Order list item 1
+2. Order list item 1</p>
+<ul>
+<li>Unordered list item 1</li>
+<li>Unordered list item 2
+{% endhighlight %}</li>
+</ul>
+<hr />
+<h3 id="table">Table</h3>
+<div class="table-container">
+  <table>
+    <tr><th>Header 1</th><th>Header 2</th><th>Header 3</th><th>Header 4</th><th>Header 5</th></tr>
+    <tr><td>Row:1 Cell:1</td><td>Row:1 Cell:2</td><td>Row:1 Cell:3</td><td>Row:1 Cell:4</td><td>Row:1 Cell:5</td></tr>
+    <tr><td>Row:2 Cell:1</td><td>Row:2 Cell:2</td><td>Row:2 Cell:3</td><td>Row:2 Cell:4</td><td>Row:2 Cell:5</td></tr>
+    <tr><td>Row:3 Cell:1</td><td>Row:3 Cell:2</td><td>Row:3 Cell:3</td><td>Row:3 Cell:4</td><td>Row:3 Cell:5</td></tr>
+    <tr><td>Row:4 Cell:1</td><td>Row:4 Cell:2</td><td>Row:4 Cell:3</td><td>Row:4 Cell:4</td><td>Row:4 Cell:5</td></tr>
+    <tr><td>Row:5 Cell:1</td><td>Row:5 Cell:2</td><td>Row:5 Cell:3</td><td>Row:5 Cell:4</td><td>Row:5 Cell:5</td></tr>
+    <tr><td>Row:6 Cell:1</td><td>Row:6 Cell:2</td><td>Row:6 Cell:3</td><td>Row:6 Cell:4</td><td>Row:6 Cell:5</td></tr>
+  </table>
+</div>
+
+<hr />
+<h3 id="quotes">Quotes</h3>
+<h4 id="a-quote-looks-like-this">A quote looks like this:</h4>
+<blockquote>
+<p>Never put off till tomorrow what may be done day after tomorrow just as well. — Mark Twain</p>
+</blockquote>
+<hr />
+<h3 id="syntax-highlighter">Syntax Highlighter</h3>
+<p>{% highlight js %}
+  $('.top').click(function () {
+    $('html, body').stop().animate({ scrollTop: 0 }, 'slow', 'swing');
+  });
+  $(window).scroll(function () {
+    if ($(this).scrollTop() &gt; $(window).height()) {
+      $('.top').addClass("top-active");
+    } else {
+      $('.top').removeClass("top-active");
+    };
+  });
+{% endhighlight %}</p>
+<hr />
+<h3 id="images">Images</h3>
+<p><img alt="" src="{{site.baseurl}}/img/03.jpg" /></p>
+<hr />
+<h3 id="videos">Videos</h3>
+<iframe src="https://www.youtube.com/embed/iWowJBRMtpc" frameborder="0" allowfullscreen></iframe>
+</body></html>

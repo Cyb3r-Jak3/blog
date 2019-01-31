@@ -2,6 +2,7 @@
 layout: post
 title: "EU Cyber Summit Wrap Up"
 date:  2018-10-25 18:00:00 +0000
+<<<<<<< HEAD
 image: CyberBanner.jpg
 tags: [Cyber-Crime, Cyber-Resilience, EU-Cyber-Summit,Events]
 catergories: [Events, CyberSecurity]
@@ -23,3 +24,6 @@ Cyber-enabled crime is a weird topic because it is a grey area. This is not crim
 
 
 The end of the cyber summit was a talk by Edward Snowden. While you may not agree with the actions that he took, the conversation that he started is an important one. One key point that he mentioned was that while US citizens are protected by the fourth amendment, corporations have no obligation to follow it. With the rollout of GDPR(General Data Privacy Regulation), there are now rules that companies have to follow with people's personal data. I found the summit a good use of time and was glad what I got out of it for my volunteering.
+=======
+
+>>>>>>> 776e49c058ae2b24650ad4ab858a9fba58991c92
