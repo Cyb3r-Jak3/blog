@@ -53,5 +53,16 @@
     {% endfor %}
     </ul>
   </div>
+<!--<div class="widget widget-tags">
+<h3 class="widget-title">Catergory Cloud</h3>
+{% capture site_cat %}{% for tag in site.category %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{%
+    endcapture %} {% assign tag_words = site_category | split:',' | sort %}
+ <ul class="tag-list list-reset">
+    {% for item in (0..site.category.size) %}{% unless forloop.last %}
+      {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+        <li class="tag-item"><a href="{{ site.baseurl }}/category#{{ this_word | cgi_escape }}" class="tag">{{ this_word }}</a></li>
+      {% endunless %}
+    {% endfor %}
+</div> -->
   
 </aside> <!-- /.sidebar -->
