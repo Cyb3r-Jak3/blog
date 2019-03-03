@@ -4,7 +4,7 @@
 title: Jacob White Blog
 description: Welcome to tech blog where I mostly rant about things cyber related. I also plan on put tutorials and walkthroughs here as well.  # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://pages.jwhite.network" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://blog.jwhite.network" # the base hostname & protocol for your site, e.g. http://example.com
 
 #-------------------------------
 # About Section
