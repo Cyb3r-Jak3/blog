@@ -6,14 +6,6 @@
 image: ruby:latest
 
 pipelines:
-  default:
-    - step:
-        script: # Modify the commands below to build your repository.
-          - gem install bundler
-          - bundler --version
-          - bundle install
-          - bundle exec jekyll build
-          - bundle exec htmlproofer ./_site --url-ignore "/#.*/"
           
   branches:
     master:
@@ -23,12 +15,11 @@ pipelines:
             - bundler --version
             - bundle install
             - bundle exec jekyll build
-           # - bundle exec htmlproofer ./_site --url-ignore "/#.*/" #Cleaned so getting all 404s. Temp fix
+            - bundle exec htmlproofer ./_site --url-ignore "/#.*/"
             - pipe: atlassian/scp-deploy:0.3.1
               variables:
                 USER: 'deploy'
                 SERVER: '199.195.248.177'
                 REMOTE_PATH: '/var/www/blog.jwhite.network/'
                 LOCAL_PATH: './_site/*'
-                EXTRA_ARGS: '-P 2222'
-                DEBUG: 'True'
+                EXTRA_ARGS: ' !(*.yml) -P 2222'
