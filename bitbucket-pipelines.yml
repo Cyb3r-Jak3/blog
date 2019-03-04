@@ -14,14 +14,7 @@ pipelines:
           - bundle install
           - bundle exec jekyll build
           - bundle exec htmlproofer ./_site --url-ignore "/#.*/"
-          - pipe: atlassian/scp-deploy:0.3.1
-            variables:
-              USER: 'main'
-              SERVER: '199.195.248.177'
-              REMOTE_PATH: '/var/www/blog.jwhite.network/'
-              LOCAL_PATH: 'build'
-              EXTRA_ARGS: '-P 2222' # Optional.
-              DEBUG: 'True'
+          
   branches:
     master:
       - step:
@@ -31,3 +24,11 @@ pipelines:
             - bundle install
             - bundle exec jekyll build
             - bundle exec htmlproofer ./_site --url-ignore "/#.*/"
+            - pipe: atlassian/scp-deploy:0.3.1
+              variables:
+                USER: 'main'
+                SERVER: '199.195.248.177'
+                REMOTE_PATH: '/var/www/blog.jwhite.network/'
+                LOCAL_PATH: 'build'
+                EXTRA_ARGS: '-P 2222'
+                DEBUG: 'True'
