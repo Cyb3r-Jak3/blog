@@ -26,9 +26,9 @@ pipelines:
             - bundle exec htmlproofer ./_site --url-ignore "/#.*/"
             - pipe: atlassian/scp-deploy:0.3.1
               variables:
-                USER: 'main'
+                USER: 'deploy'
                 SERVER: '199.195.248.177'
                 REMOTE_PATH: '/var/www/blog.jwhite.network/'
-                LOCAL_PATH: './_site/'
+                LOCAL_PATH: './_site/*'
                 EXTRA_ARGS: '-P 2222'
                 DEBUG: 'True'
