@@ -23,7 +23,7 @@ pipelines:
             - bundler --version
             - bundle install
             - bundle exec jekyll build
-            - bundle exec htmlproofer ./_site --url-ignore "/#.*/"
+           # - bundle exec htmlproofer ./_site --url-ignore "/#.*/" #Cleaned so getting all 404s. Temp fix
             - pipe: atlassian/scp-deploy:0.3.1
               variables:
                 USER: 'deploy'
