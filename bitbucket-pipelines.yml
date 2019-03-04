@@ -9,6 +9,8 @@ pipelines:
   default:
     - step:
         script: # Modify the commands below to build your repository.
+          - gem install bundler -v 1.17.1
+          - gem uninstall bundler -v 2.0.0.pre1
           - bundle update --bundler
           - bundler --version
           - bundle install
