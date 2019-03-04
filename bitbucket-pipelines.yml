@@ -18,6 +18,7 @@ pipelines:
     master:
       - step:
           script:
+            - gem install bundler
             - bundler --version
             - bundle install
             - bundle exec jekyll build
