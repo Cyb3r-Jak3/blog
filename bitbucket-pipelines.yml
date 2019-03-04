@@ -9,6 +9,7 @@ pipelines:
   default:
     - step:
         script: # Modify the commands below to build your repository.
+          - bundle update --bundler
           - bundler --version
           - bundle install
           - bundle exec jekyll build
@@ -17,6 +18,7 @@ pipelines:
     master:
       - step:
           script:
+            - bundle update --bundler
             - bundler --version
             - bundle install
             - bundle exec jekyll build
