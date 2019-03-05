@@ -21,11 +21,11 @@ pipelines:
           deployment: production
           trigger: manual
           script:
-             - rsync -rav -e "ssh -P 2222 -i  /opt/atlassian/pipelines/agent/ssh/id_rsa_tmp" --exclude="*.yml" ./_site/* deploy@199.195.248.177:/var/www/blog.jwhite.network
-#            - pipe: atlassian/scp-deploy:0.3.1
-#              variables:
-#                USER: 'deploy'
-#                SERVER: '199.195.248.177'
-#                REMOTE_PATH: '/var/www/blog.jwhite.network/'
-#                LOCAL_PATH: './_site/*'
-#                EXTRA_ARGS: ' -P 2222 !(*.yml)'
+             - rm -R *.yml
+            - pipe: atlassian/scp-deploy:0.3.1
+              variables:
+                USER: '$DeploymentUser'
+                SERVER: '$ServerIP'
+                REMOTE_PATH: '$RPath'
+                LOCAL_PATH: './_site/*'
+                EXTRA_ARGS: ' -P 2222'
