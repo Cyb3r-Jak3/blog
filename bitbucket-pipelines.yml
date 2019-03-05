@@ -6,14 +6,15 @@
 image: ruby:latest
 
 pipelines:
-
   branches:
     master:
       - step:
+          caches:
+              - bundler
           script:
             - gem install bundler
             - bundler --version
-            - bundle install
+            - bundle install --path vendor/bundle
             - bundle exec jekyll build
             - bundle exec htmlproofer ./_site --url-ignore "/#.*/"
           artifacts:
@@ -23,7 +24,6 @@ pipelines:
           deployment: production
           trigger: manual
           script:
-            - rm -R *.yml
             - pipe: atlassian/scp-deploy:0.3.1
               variables:
                 USER: '$DeploymentUser'
@@ -31,3 +31,7 @@ pipelines:
                 REMOTE_PATH: '$RPath'
                 LOCAL_PATH: '_site/*'
                 EXTRA_ARGS: ' -P 2222'
+
+definitions:
+  caches:
+     bundler: vendor/bundle
