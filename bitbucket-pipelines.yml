@@ -21,7 +21,7 @@ pipelines:
           deployment: production
           trigger: manual
           script:
-             - rm -R *.yml
+            - rm -R *.yml
             - pipe: atlassian/scp-deploy:0.3.1
               variables:
                 USER: '$DeploymentUser'
