@@ -16,6 +16,8 @@ pipelines:
             - bundle install
             - bundle exec jekyll build
             - bundle exec htmlproofer ./_site --url-ignore "/#.*/"
+          artifacts:
+            - _site/**
       - step:
           name: Deploy to Host
           deployment: production
@@ -27,5 +29,5 @@ pipelines:
                 USER: '$DeploymentUser'
                 SERVER: '$ServerIP'
                 REMOTE_PATH: '$RPath'
-                LOCAL_PATH: '/opt/atlassian/pipelines/agent/build/_site/*'
+                LOCAL_PATH: '_site/*'
                 EXTRA_ARGS: ' -P 2222'
