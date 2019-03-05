@@ -6,7 +6,7 @@
 image: ruby:latest
 
 pipelines:
-          
+
   branches:
     master:
       - step:
@@ -16,11 +16,12 @@ pipelines:
             - bundle install
             - bundle exec jekyll build
             - bundle exec htmlproofer ./_site --url-ignore "/#.*/"
-     - step:
-        name: Deploy to Host
-        deployment: production
-        trigger: manual
-        script:
+
+      - step:
+          name: Deploy to Host
+          deployment: production
+          trigger: manual
+          script:
             - pipe: atlassian/scp-deploy:0.3.1
               variables:
                 USER: 'deploy'
@@ -28,6 +29,3 @@ pipelines:
                 REMOTE_PATH: '/var/www/blog.jwhite.network/'
                 LOCAL_PATH: './_site/*'
                 EXTRA_ARGS: ' !(*.yml) -P 2222'
-
-
-
