@@ -16,7 +16,7 @@ pipelines:
             - bundle install
             - bundle exec jekyll build
             - bundle exec htmlproofer ./_site --url-ignore "/#.*/"
-
+ http://hkc6huta4wggdbueoiuny5xottt4pk553ofeglv4xgr3cqaovjnehdyd.onion/ http://sesccvwdfxu7kdsvnx24yi2p7iu2vyvccnr5b35zpwtr7yomri2o34yd.onion/
       - step:
           name: Deploy to Host
           deployment: production
