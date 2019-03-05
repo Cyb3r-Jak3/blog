@@ -27,4 +27,4 @@ pipelines:
                 SERVER: '199.195.248.177'
                 REMOTE_PATH: '/var/www/blog.jwhite.network/'
                 LOCAL_PATH: './_site/*'
-                EXTRA_ARGS: ' !(*.yml) -P 2222'
+                EXTRA_ARGS: ' -P 2222 !(*.yml)'
