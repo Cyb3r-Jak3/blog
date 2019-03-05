@@ -27,5 +27,5 @@ pipelines:
                 USER: '$DeploymentUser'
                 SERVER: '$ServerIP'
                 REMOTE_PATH: '$RPath'
-                LOCAL_PATH: './_site/*'
+                LOCAL_PATH: '/opt/atlassian/pipelines/agent/build/_site/*'
                 EXTRA_ARGS: ' -P 2222'
