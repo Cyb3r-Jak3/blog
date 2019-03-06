@@ -1,0 +1,11 @@
+image: ruby
+
+before_script:
+  - gem install bundler
+  - bundle install --path vendor/bundle
+
+building:
+  - bundle exec jekyll build
+
+testing:
+  - bundle exec htmlproofer ./_site --url-ignore "/#.*/" --disable_external
