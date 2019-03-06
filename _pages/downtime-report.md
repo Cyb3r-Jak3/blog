@@ -31,3 +31,12 @@ This is a page where I will discuss any downtime of services that I provide. A r
 
 ----
 
+#### Downtime on March 6th, 2019
+- **Time**:  
+	- Down: 9:33 UTC (~ 5 minutes)
+	- Up: 13:48 UTC (Manual Check). Reported back at 13:48 UTC by Uptime Robot.  
+	- Total Time: 4 hours and 14 minutes. (I was asleep when it went down)
+- **Affected Services**: blog, failover webserver, hidden service web site, tor exit.
+- **Reason/Cause**: It turns out that I was wrong about the program generating a v3 address. It is actually tor that is taking about 95% of the CPU. Specifically, the process that was running the tor exit node. 
+- **Actions Taken**: I forced a restart because it would not respond otherwise.
+- **Remedial Actions**: For now I am stopping my service as a tor exit node so that I can research a way to limit the resources that it can take and hopefully I can continue to run it. 
