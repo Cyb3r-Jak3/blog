@@ -16,7 +16,7 @@ pipelines:
             - bundler --version
             - bundle install --path vendor/bundle
             - bundle exec jekyll build
-            - bundle exec htmlproofer ./_site --url-ignore "/#.*/" "https://blog.jwhite.network/*"
+            - bundle exec htmlproofer ./_site --url-ignore "https://blog.jwhite.network/*" #"/#.*/"
           artifacts:
             - _site/**
       - step:
