@@ -5,13 +5,14 @@ Encoding.default_external = Encoding::UTF_8
 Encoding.default_internal = Encoding::UTF_8
 
 gem "bundler"
+gem 'rake'
 gem "jekyll", ">= 3.8.4"
 gem "jekyll-paginate"
 gem "jekyll-sitemap"
-#gem 'jekyll-admin', group: :jekyll_plugins
 gem 'jekyll-seo-tag'
 gem 'jekyll-feed'
 gem 'html-proofer'
+gem 'sassc'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

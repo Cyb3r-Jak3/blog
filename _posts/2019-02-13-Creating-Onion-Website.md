@@ -2,7 +2,7 @@
 layout: post
 title: "Creating an Onion Website"
 date: 2019-02-13 15:00:00 -5000
-image: tor_help.png
+image: torguide/tor_help.png
 tags: [Tor, Tutorial]
 catergories: [Tutorial]
 ---

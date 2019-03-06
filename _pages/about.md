@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-image: intro-bg.jpg
+image: about/intro-bg.jpg
 permalink: /about/
 ---
 ## Welcome
