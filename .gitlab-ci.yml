@@ -1,10 +1,15 @@
 image: ruby
 
 stages:
+ - setup
  - build
  - test
 
-before_script:
+setup:
+  cache:
+    path:
+      vendor/bundle
+  script:
   - gem install bundler
   - bundle install --path vendor/bundle
 
@@ -15,6 +20,8 @@ build:
       - _site
   script:
     - bundle exec jekyll build
+  dependencies:
+    - setup
 
 test:
   stage: test
