@@ -5,7 +5,7 @@ stages:
  - test
 
 
-setup:
+setup&build:
   stage: setup
   cache:
     paths:
@@ -13,29 +13,17 @@ setup:
   script:
   - gem install bundler
   - bundle install --path vendor/bundle
+  - bundle exec jekyll build
   artifacts:
     paths:
       - vendor/
       - .bundle/
-
-
-build:
-  cache:
-    paths:
-      - vendor/bundle
-  stage: setup
-  artifacts:
-    paths:
       - _site
-      - vendor/
-  script:
-    - bundle exec jekyll build
 
 test:
   stage: test
   script:
     - bundle exec htmlproofer ./_site --url-ignore "/#.*/" --disable_external
   dependencies:
-    - build
     - setup
 
