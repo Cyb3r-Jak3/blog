@@ -12,7 +12,7 @@ build:
   stage: build
   artifacts:
     paths:
-      - /_site
+      - _site
   script:
     - bundle exec jekyll build
 
