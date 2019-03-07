@@ -17,6 +17,7 @@ setup:
   artifacts:
     paths:
       - vendor/
+      - .bundle/
 
 
 build:
