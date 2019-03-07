@@ -1,21 +1,37 @@
 image: ruby
 
 stages:
+ - setup
  - build
  - test
 
-build:
-  stage: build
+
+setup:
+  stage: setup
   cache:
     paths:
       - vendor/bundle
+  script:
+  - gem install bundler
+  - bundle install --path vendor/bundle
+  artifacts:
+    paths:
+      - vendor/
+
+
+build:
+  cache:
+    paths:
+      - vendor/bundle
+  stage: build
   artifacts:
     paths:
       - _site
+      - vendor/
   script:
-    - gem install bundler
-    - bundle install --path vendor/bundle
     - bundle exec jekyll build
+  dependencies:
+   - setup
 
 test:
   stage: test
@@ -23,3 +39,5 @@ test:
     - bundle exec htmlproofer ./_site --url-ignore "/#.*/" --disable_external
   dependencies:
     - build
+    - setup
+
