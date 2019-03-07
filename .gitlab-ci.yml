@@ -2,7 +2,6 @@ image: ruby
 
 stages:
  - setup
- - build
  - test
 
 
@@ -24,7 +23,7 @@ build:
   cache:
     paths:
       - vendor/bundle
-  stage: build
+  stage: setup
   artifacts:
     paths:
       - _site
