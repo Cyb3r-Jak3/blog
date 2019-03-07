@@ -1,10 +1,24 @@
 image: ruby
 
+stages:
+ - build
+ - test
+
 before_script:
   - gem install bundler
   - bundle install --path vendor/bundle
 
 build:
+  stage: build
+  artifacts:
+    paths:
+      - _/site
   script:
     - bundle exec jekyll build
+
+test:
+  stage: test
+  script:
     - bundle exec htmlproofer ./_site --url-ignore "/#.*/" --disable_external
+  dependencies:
+    - build
