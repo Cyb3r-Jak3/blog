@@ -21,4 +21,4 @@ test:
   script:
     - bundle exec htmlproofer ./_site --url-ignore "/#.*/" --disable_external
   dependencies:
-    - GitLab build
+    - build
