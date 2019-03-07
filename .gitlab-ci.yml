@@ -30,8 +30,6 @@ build:
       - vendor/
   script:
     - bundle exec jekyll build
-  dependencies:
-   - setup
 
 test:
   stage: test
