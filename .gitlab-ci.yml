@@ -5,7 +5,9 @@ before_script:
   - bundle install --path vendor/bundle
 
 jekyll:
-  - bundle exec jekyll build
+  script:
+    - bundle exec jekyll build
 
 htmlproofer:
+  script:
   - bundle exec htmlproofer ./_site --url-ignore "/#.*/" --disable_external
