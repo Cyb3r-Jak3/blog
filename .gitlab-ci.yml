@@ -12,7 +12,7 @@ build:
   stage: build
   artifacts:
     paths:
-      - _/site
+      - /_site
   script:
     - bundle exec jekyll build
 
@@ -21,4 +21,4 @@ test:
   script:
     - bundle exec htmlproofer ./_site --url-ignore "/#.*/" --disable_external
   dependencies:
-    - build
+    - GitLab build
