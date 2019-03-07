@@ -4,10 +4,7 @@ before_script:
   - gem install bundler
   - bundle install --path vendor/bundle
 
-jekyll:
+build:
   script:
     - bundle exec jekyll build
-
-htmlproofer:
-  script:
-  - bundle exec htmlproofer ./_site --url-ignore "/#.*/" --disable_external
+    - bundle exec htmlproofer ./_site --url-ignore "/#.*/" --disable_external
