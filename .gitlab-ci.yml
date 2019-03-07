@@ -1,25 +1,20 @@
 image: ruby
 
 stages:
- - setup
  - build
  - test
 
-setup:
-  stage: setup
+build:
+  stage: build
   cache:
     paths:
       - vendor/bundle
-  script:
-  - gem install bundler
-  - bundle install --path vendor/bundle
-
-build:
-  stage: build
   artifacts:
     paths:
       - _site
   script:
+    - gem install bundler
+    - bundle install --path vendor/bundle
     - bundle exec jekyll build
 
 test:
