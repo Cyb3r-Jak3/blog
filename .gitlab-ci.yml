@@ -5,7 +5,7 @@ stages:
  - test
 
 
-setup&build:
+setup:
   stage: setup
   cache:
     paths:
