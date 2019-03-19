@@ -17,13 +17,13 @@ setup:
   artifacts:
     paths:
       - vendor/**
-      - .bundle/
       - _site/**
 
 test:
   stage: test
   script:
-    - bundle exec htmlproofer ./_site --url-ignore "/#.*/" --disable_external
+    - ls
+    - bundle exec htmlproofer ./_site/ --url-ignore "/#.*/" --disable_external
   dependencies:
     - setup
 
