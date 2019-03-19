@@ -16,9 +16,9 @@ setup:
   - bundle exec jekyll build
   artifacts:
     paths:
-      - vendor/
+      - vendor/**
       - .bundle/
-      - _site
+      - _site/**
 
 test:
   stage: test
