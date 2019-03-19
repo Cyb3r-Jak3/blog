@@ -22,7 +22,7 @@ setup:
 test:
   stage: test
   script:
-    - ls
+    - ls -a
     - bundle exec htmlproofer ./_site/ --url-ignore "/#.*/" --disable_external
   dependencies:
     - setup
