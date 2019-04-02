@@ -1,6 +1,11 @@
 image: ruby
 
+stages:
+  - build
+  - deploy
+
 setup:
+  stage: build
   cache:
     paths:
       - vendor/bundle
@@ -9,3 +14,15 @@ setup:
   - bundle install --path vendor/bundle
   - bundle exec jekyll build
   - bundle exec htmlproofer ./_site/ --url-ignore "/#.*/" --disable_external
+
+
+deploy_staging:
+  stage: deploy
+  script:
+    - echo "Deploy to staging server"
+  environment:
+    name: production
+    url: https://blog.jwhite.network
+  only:
+  - master
+
