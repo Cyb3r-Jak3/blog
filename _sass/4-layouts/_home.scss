@@ -212,6 +212,10 @@
         font-size: 12px;
       }
     }
+    position: absolute;
+    top: 0px;
+
+    
     .article-date {
       .date {
         font-size: 12px;
@@ -245,6 +249,10 @@
         background: $primary-color;
         color: $white;
       }
+      position: absolute;
+      right: -120px;
+      top: 170px;
+
     }
   }
 }
