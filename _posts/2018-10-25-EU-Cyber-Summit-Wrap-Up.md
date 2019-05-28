@@ -2,7 +2,7 @@
 layout: post
 title: "EU Cyber Summit Wrap Up"
 date:  2018-10-25 18:00:00 +0000
-image: CyberBanner.jpg
+image: CyberBanner.png
 tags: [Cyber-Crime, Cyber-Resilience, EU-Cyber-Summit,Events]
 catergories: [Events, CyberSecurity]
 ---
