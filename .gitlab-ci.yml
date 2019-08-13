@@ -5,6 +5,6 @@ setup:
     paths:
      - vendor/bundle
   script:
-    gem install bundler
-    bundle install --path vendor/bundle
-    bundle exec jekyll build
+    - gem install bundler
+    - bundle install --path vendor/bundle
+    - bundle exec jekyll build
