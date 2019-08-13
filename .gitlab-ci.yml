@@ -22,4 +22,5 @@ test:
   dependencies:
   - build
   script:
+    - gem install bundler
     - bundle exec htmlproofer /builds/jwhite1st/blog/_site/ --url-ignore "/#.*/" --disable_external
