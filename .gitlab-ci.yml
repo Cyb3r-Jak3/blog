@@ -37,7 +37,7 @@ deploy:
    - echo "$SSH_P_KEY" | tr -d '\r' | ssh-add - > /dev/null
    - mkdir -p ~/.ssh
    - chmod 700 ~/.ssh
-   - ssh-keyscan -p 2222 192.195.248.177 > ~/.ssh/known_hosts
+   - ssh-keyscan -p 2222 $ServerIP > ~/.ssh/known_hosts
    - chmod 644 ~/.ssh/known_hosts
   stage: deploy
   dependencies:
