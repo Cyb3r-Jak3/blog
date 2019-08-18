@@ -10,7 +10,9 @@ stages:
  - deploy
 
 before_script:
- - apt-get update -qq && apt-get install -y -qq sshpass
+ - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+ - eval $(ssh-agent -s)
+ - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
 
 build:
   stage: build
@@ -38,6 +40,8 @@ deploy:
    - test
   script:
   - echo "Made it to deployment"
+  - ssh deploy@$ServerIP:2222
+  
   environment:
     name: Self_Host
     url: https://blog.jwhite.network
