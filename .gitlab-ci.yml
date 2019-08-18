@@ -35,13 +35,13 @@ deploy:
    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
    - eval $(ssh-agent -s)
    - echo "$SSH_P_KEY" | tr -d '\r' | ssh-add - > /dev/null
+   - mkdir -p ~/.ssh/known_hosts
+   - echo "$SSH_REMOTE_KEY" >> ~/.ssh/known_hosts
   stage: deploy
   dependencies:
    - build
    - test
   script:
-  - echo "Made it to deployment"
-  - echo "$SSH_REMOTE_KEY" >> ~/.ssh/known_hosts
   - chmod 644 ~/.ssh/known_hosts
   - ssh deploy@$ServerIP:2222
   environment:
