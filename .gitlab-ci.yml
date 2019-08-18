@@ -41,7 +41,7 @@ deploy:
    - test
   script:
   - echo "Made it to deployment"
-  - echo "$SSH_REMOTE_KEY" ~/.ssh/known_hosts
+  - echo "$SSH_REMOTE_KEY" > ~/.ssh/known_hosts
   - chmod 644 ~/.ssh/known_hosts
   - ssh deploy@$ServerIP:2222
   environment:
