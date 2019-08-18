@@ -45,7 +45,7 @@ deploy:
    - test
   script:
 
-  - ssh deploy@$ServerIP:2222
+  - ssh deploy@$ServerIP -p 2222
   environment:
     name: Self_Host
     url: https://blog.jwhite.network
