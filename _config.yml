@@ -77,6 +77,10 @@ exclude:
   - Gemfile.lock
   - bitbucket-pipelines.yml
   - vendor/bundle/
+  - .gitlab-ci.yml
+  - README.md
+  - LICENSE.txt
+  - space.code-workspace
 #   - node_modules
 #   - vendor/cache/
 #   - vendor/gems/

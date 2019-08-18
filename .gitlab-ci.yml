@@ -44,8 +44,7 @@ deploy:
    - build
    - test
   script:
-
-  - ssh deploy@$ServerIP -p 2222
+  - scp -rp -P 2222 /builds/jwhite1st/blog/_site/*  $DeployUser@$ServerIP:$RPath
   environment:
     name: Self_Host
     url: https://blog.jwhite.network
