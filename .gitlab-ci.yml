@@ -9,10 +9,7 @@ stages:
  - test
  - deploy
 
-before_script:
- - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
- - eval $(ssh-agent -s)
- - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+
 
 build:
   stage: build
@@ -34,14 +31,19 @@ test:
     - bundle exec htmlproofer /builds/jwhite1st/blog/_site/ --url-ignore "/#.*/" --disable_external
 
 deploy:
+  before_script:
+   - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+   - eval $(ssh-agent -s)
+   - echo "$SSH_P_KEY" | tr -d '\r' | ssh-add - > /dev/null
   stage: deploy
   dependencies:
    - build
    - test
   script:
   - echo "Made it to deployment"
+  - echo "$SSH_REMOTE_KEY" ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
   - ssh deploy@$ServerIP:2222
-  
   environment:
     name: Self_Host
     url: https://blog.jwhite.network
