@@ -43,6 +43,7 @@ defaults:
 site.future: false
 
 
+
 #-------------------------------
 # Build settings
 markdown: kramdown
@@ -53,6 +54,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-twitter-plugin
+  - jekyll-redirect-from
 
 
 paginate: 7
@@ -65,17 +67,11 @@ sass:
   sass_dir: _sass
   style: compressed
 
-#webrick:
-#  headers:
-#    Content-Security-Policy: "default-src * https://disqus.com https://*.disqus.com https://*.disquscdn.com ; script-src * 'self' 'unsafe-inline' http://questionasker.disqus.com/embed.js; style-src * 'unsafe-inline' ; font-src 'self' https://fonts.gstatic.com/s/nunito/v9/XRXV3I6Li01BKofIOuaBXso.woff2 https://fonts.gstatic.com/s/nunito/v9/XRXV3I6Li01BKofIO-aBXso.woff2 https://fonts.gstatic.com/s/nunito/v9/XRXV3I6Li01BKofINeaB.woff2 https://fonts.gstatic.com/s/nunito/v9/XRXW3I6Li01BKofAjsOUbuvISTs.woff2 https://fonts.gstatic.com/s/nunito/v9/XRXW3I6Li01BKofAjsOUb-vISTs.woff2 https://fonts.gstatic.com/s/nunito/v9/XRXW3I6Li01BKofAjsOUYevI.woff2 ; object-src 'none'; base-uri 'self'; frame-ancestors 'none' ; report-uri https://jwhite.report-uri.com/r/d/csp/enforce;"
-
-
 #-------------------------------
 # Exclude from processing.
 exclude:
   - Gemfile
   - Gemfile.lock
-  - bitbucket-pipelines.yml
   - vendor/bundle/
   - .gitlab-ci.yml
   - README.md
