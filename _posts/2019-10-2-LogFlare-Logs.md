@@ -14,7 +14,7 @@ This gives me plenty of information about who is connecting what and what I sent
 ![Interesting Chart](/img/logflare/interesting-chart.png)
 That chart is showing that the IP 192.162.240.106 is requesting the file ```t.txt``` from my blog. This file does not exist and this is the only IP that is trying to request this file. If I look at the IP origin it is from Russia. I was curious so I went and found the actual log and this is it
 ![Russia Google Log](/img/logflare/russia-google.png)
-[interesting json](/other-files/logflare/example.json)  
+[interesting json](/other-files/logflare/russia.json)  
 What is interesting is that the request is using the user agent of Google's web crawler bot, however, if we try and verify that it is a legitimate IP of Google's bot using [Google's Recommended Method](https://support.google.com/webmasters/answer/80553), it fails to get a record. This means that it is a fake bot impersonating Google.
 
 This shows the power of being able to view the raw logs and visualizations the logs can have. I plan on keep using the services and will have an update when I have a greater amount of logs.
