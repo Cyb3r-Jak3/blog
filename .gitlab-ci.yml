@@ -1,6 +1,7 @@
 image: ruby
 include:
   template: Dependency-Scanning.gitlab-ci.yml
+  template: Code-Quality.gitlab-ci.yml
 
 
 cache:
