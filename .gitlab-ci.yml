@@ -32,7 +32,7 @@ test:
     - bundle install --path vendor/bundle
     - bundle exec htmlproofer /builds/jwhite1st/blog/_site/ --url-ignore "/#.*/" --disable_external
 
-deploy:
+.deploy:
   before_script:
    - eval $(ssh-agent -s)
    - echo "$SSH_P_KEY" | tr -d '\r' | ssh-add - > /dev/null
@@ -40,16 +40,30 @@ deploy:
    - chmod 700 ~/.ssh
    - cat $SSH_KNOWN > ~/.ssh/known_hosts
    - chmod 644 ~/.ssh/known_hosts
+  script:
+  - scp -rp -P 2222 /builds/jwhite1st/blog/_site/*  $DeployUser@$ServerIP:$RPath
+
+deploy_manual:
+  extends: .deploy
   stage: deploy
   dependencies:
    - build
    - test
-  script:
-  - scp -rp -P 2222 /builds/jwhite1st/blog/_site/*  $DeployUser@$ServerIP:$RPath
   environment:
     name: Self_Host
     url: https://blog.jwhite.network
   when: manual
+  except:
+   - schedules
+
+deploy_schedule:
+  extends: .deploy
+  stage: deploy
+  dependencies:
+   - build
+   - test
+  environment:
+    name: Self_Host
+    url: https://blog.jwhite.network
   only:
-   - master
    - schedules
