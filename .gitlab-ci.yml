@@ -34,12 +34,11 @@ test:
 
 deploy:
   before_script:
-   - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
    - eval $(ssh-agent -s)
    - echo "$SSH_P_KEY" | tr -d '\r' | ssh-add - > /dev/null
    - mkdir -p ~/.ssh
    - chmod 700 ~/.ssh
-   - ssh-keyscan -p 2222 $ServerIP > ~/.ssh/known_hosts
+   - cat $SSH_KNOWN > ~/.ssh/known_hosts
    - chmod 644 ~/.ssh/known_hosts
   stage: deploy
   dependencies:
