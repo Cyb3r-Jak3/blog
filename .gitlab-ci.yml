@@ -17,7 +17,7 @@ build:
   stage: build
   artifacts:
      paths:
-     - /builds/jwhite1st/blog/_site/* 
+     - /builds/Cyb3r-Jak3/blog/_site/* 
   script:
     - gem install bundler
     - bundle install --path vendor/bundle
@@ -30,7 +30,7 @@ test:
   script:
     - gem install bundler
     - bundle install --path vendor/bundle
-    - bundle exec htmlproofer /builds/jwhite1st/blog/_site/ --url-ignore "/#.*/" --disable_external
+    - bundle exec htmlproofer /builds/Cyb3r-Jak3/blog/_site/ --url-ignore "/#.*/" --disable_external
 
 .deploy:
   image: kroniak/ssh-client
@@ -42,7 +42,7 @@ test:
    - cat $SSH_KNOWN > ~/.ssh/known_hosts
    - chmod 644 ~/.ssh/known_hosts
   script:
-  - scp -rp -P 2222 /builds/jwhite1st/blog/_site/*  $DeployUser@$ServerIP:$RPath
+  - scp -rp -P 2222 /builds/Cyb3r-Jak3/blog/_site/*  $DeployUser@$ServerIP:$RPath
 
 deploy_manual:
   extends: .deploy
