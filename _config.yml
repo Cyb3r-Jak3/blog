@@ -17,10 +17,11 @@ author-avatar: about/about.png
 social:
   name: Jacob White
   links:
-    - https://github.com/jwhite1st/
+    - https://github.com/Cyb3r-Jak3/
     - https://www.linkedin.com/in/jacob-white-01
     - https://blog.jwhite.network
     - https://keybase.io/jake1st
+    - https://twitter.com/Cyb3r_Jak3
 
 
 #-------------------------------
@@ -76,7 +77,6 @@ exclude:
   - .gitlab-ci.yml
   - README.md
   - LICENSE.txt
-  - space.code-workspace
 #   - node_modules
 #   - vendor/cache/
 #   - vendor/gems/

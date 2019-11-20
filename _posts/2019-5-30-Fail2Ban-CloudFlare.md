@@ -6,15 +6,15 @@ image: fail2ban/nginx-fail2ban-security.png
 tags: [Tutorial]
 categories: [Tutorial]
 ---
-When protecting a server [fail2ban](https://www.fail2ban.org/wiki/index.php/Main_Page) is a great tool for the job. It reads log files and bans IPs that show signs of malicious activity. There is a lot of support for and it can intergrate well with other applications.
+When protecting a server [fail2ban](https://www.fail2ban.org/wiki/index.php/Main_Page) is a great tool for the job. It reads log files and bans IPs that show signs of malicious activity. There is a lot of support for and it can integrate well with other applications.
 
 ##### How I Use it
-I use CloudFlare on all my sites. This means that when you connect to any of my sites, you connect to cloudflare then CloudFlare connects to my site. Because of this, I have an rule in nginx (which I added a the bottom) that blocks any connections that attempt to connect directly to my server. I decicded to increase the protection that I had on my server by creating a filter in fail2ban. I made it so connections are blocked for 5 minutes if the connection is made from an IP that is not from CloudFlare.  
 
-#### [Fail2ban filter configuration and instructions here](https://github.com/jwhite1st/Scripts/tree/master/Linux/fail2ban)
+I use CloudFlare on all my sites. This means that when you connect to any of my sites, you connect to cloudflare then CloudFlare connects to my site. Because of this, I have an rule in nginx (which I added a the bottom) that blocks any connections that attempt to connect directly to my server. I decided to increase the protection that I had on my server by creating a filter in fail2ban. I made it so connections are blocked for 5 minutes if the connection is made from an IP that is not from CloudFlare.  
+
+#### [Fail2ban filter configuration and instructions here](https://github.com/Cyb3r-Jak3/Scripts/tree/master/Linux/fail2ban)
 
 ##### Nginx Rule  
-
 
 #Allow Cloudflare IPs  
 #Retrived from https://www.cloudflare.com/ips/  

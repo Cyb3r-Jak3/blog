@@ -8,6 +8,7 @@ catergories: [Announcements]
 ---
 
 ## Welcome to My New Blog
+
 As you can see from the layout, I have switched my blog hosting. I previously had a WordPress site on 000webhost, but I did not like it. It was slow and sometimes the connections would time out while I was trying to make changes. WordPress is a great and easy solution for a blog but it did not offer markdown support for posts, which is something that I wanted in case I wanted to add code examples.  
   
 My new solution is using Jekyll, self-hosted here at [blog.jwhite.network](https://blog.jwhite.network). I also have an atom feed for my blog available at [blog.jwhite.network/feed.xml](https://blog.jwhite.network/feed.xml).  
