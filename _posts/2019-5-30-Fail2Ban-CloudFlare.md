@@ -16,6 +16,7 @@ I use CloudFlare on all my sites. This means that when you connect to any of my 
 
 ##### Nginx Rule  
 
+```bash
 #Allow Cloudflare IPs  
 #Retrived from https://www.cloudflare.com/ips/  
 allow 173.245.48.0/20;  
@@ -42,3 +43,4 @@ allow 2c0f:f248::/32;
   
 #Block all other IPs from connecting  
 deny all;  
+```

@@ -10,36 +10,44 @@ Creating a hidden service is a good way to get introduced to tor and onion routi
 &nbsp;
 
 #### Installing Nginx  
-1. ```sudo apt install nginx```
+
+1. ```sudo apt install nginx```  
 
 &nbsp;  
+
 #### Installing Tor
+
 ---
 To get the tor binaries you can either install from the tor repositories or you can download and build it from source. In this, I will be installing it via the repositories because it is quicker and easier.  
 
 1. ```echo deb https://deb.torproject.org/torproject.org bionic main | sudo tee /etc/apt/sources.list.d/tor.list```
 2. ```echo deb-src https://deb.torproject.org/torproject.org bionic main | sudo tee -a /etc/apt/sources.list.d/tor.list```
-  - The -a in the second tee command means that it will append rather than overwrite.
+   1. - The -a in the second tee command means that it will append rather than overwrite.
 3. ```gpg2 --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD8```
 4. ```gpg2 --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -```
 5. ```sudo apt-get update && sudo apt-get install tor deb.torproject.org-keyring```  
 Now tor and nginx are installed and we just have to configure them.  
 &nbsp;  
 
-
 #### Configuring Nginx
+
 ---
+
 1. Make web root. This is where your web files will go.
- - ```sudo mkdir -p /var/www/onionsite/```
+   1. ```sudo mkdir -p /var/www/onionsite/```
 2. Nginx config server file.
-- You want to make a simple nginx config file in the /etc/nginx/sites-available/tor.
-- My file is ![Nginx config file](/img/torguide/nginxconfig.png)
+   1. You want to make a simple nginx config file in the /etc/nginx/sites-available/tor.
+   2. My file is ![Nginx config file](/img/torguide/nginxconfig.png)
 3. Link Nginx config.
-- ```sudo ln -s /etc/nginx/sites-available/tor /etc/nginx/sites-enabled/```
-- Use the full path when linking otherwise it can break.  
+   1. ```sudo ln -s /etc/nginx/sites-available/tor /etc/nginx/sites-enabled/```
+   2. Use the full path when linking otherwise it can break.  
+
 &nbsp;  
+
 #### Configuring Tor
+
 The default tor config is located at /etc/tor/torrc. I would recommend backing up the current one you have and starting fresh. You want a config that contains:
+
 - `SOCKSPort 0`
 - `DataDirectory /var/lib/tor`  
 - `HiddenServiceDir /var/lib/tor/onion/`  
