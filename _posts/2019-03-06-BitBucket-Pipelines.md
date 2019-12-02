@@ -4,7 +4,7 @@ title: "BitBucket Pipelines"
 date: 2019-03-06 17:00:00 -5000
 image: pipelines/bitbucket-pipelines.png
 tags: [Tutorial, Announcements]
-catergories: [Announcements]
+categories: [Announcements]
 ---
 Something that I recently completed over the weekend was using bitbucket pipelines to automate the building and deployment of my blog. Previously I was building the site on my computer and sftping the files to my hosting server. This worked reasonably well. I had links set up so that I could upload the files to a folder in the home directory and then it would link those files to the /var/www/ folder. It wasn't the best setup because I would have to link the files every time that I added new files. Also, it wasn't really that secure, I felt. Nginx was loading files from a folder in a home directory so it was not that clean. I always wanted to automate the process because it just makes everything easier. I tried using git deploy hooks but it did not really work for me.  
   

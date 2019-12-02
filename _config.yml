@@ -8,14 +8,14 @@ url: "https://blog.jwhite.network" # the base hostname & protocol for your site,
 
 #-------------------------------
 # About Section
-author-name:   Jacob White
+author-name:   Jake
 author-avatar: about/about.png
 
 
 #-------------------------------
 # Social links
 social:
-  name: Jacob White
+  name: Cyb3r_Jak3
   links:
     - https://github.com/Cyb3r-Jak3/
     - https://www.linkedin.com/in/jacob-white-01

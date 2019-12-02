@@ -4,9 +4,9 @@ title: "Creating an Onion Website"
 date: 2019-02-13 15:00:00 -5000
 image: torguide/tor_help.png
 tags: [Tor, Tutorial]
-catergories: [Tutorial]
+categories: [Tutorial]
 ---
-Creating a hidden service is a good way to get introduced to tor and onion routing. For this walkthrough, I will be installing tor on Ubuntu 18.04 LTS and be using nginx as my web server. This is for educational purposes only. What you do on your hidden service is your responsibility.  
+Creating a hidden service is a good way to get introduced to tor and onion routing. For this walk through, I will be installing tor on Ubuntu 18.04 LTS and be using nginx as my web server. This is for educational purposes only. What you do on your hidden service is your responsibility.  
 &nbsp;
 
 #### Installing Nginx  
