@@ -73,7 +73,9 @@ deploy_schedule:
 Clear_Cache:
   image: cyb3rjak3/docker-curl-ssh
   stage: clear
+  variables:
+   Content-Type: "Content-Type: application/json" 
   dependencies:
-  - deploy
+  - deploy_manual
   script:
-  - curl -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache" -H "X-Auth-Email: $API_EMAIL" -H "$API_KEY" -H "Content-Type: application/json" --data '{"files":["https://blog.jwhite.network/*"]}'
+  - curl -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache" -H "$API_KEY" -H $Content-Type --data '{"files":["https://blog.jwhite.network/*"]}'
