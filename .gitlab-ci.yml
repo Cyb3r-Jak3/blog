@@ -11,6 +11,7 @@ stages:
  - build
  - test
  - deploy
+ - clear
 
 
 build:
@@ -33,7 +34,7 @@ test:
     - bundle exec htmlproofer /builds/Cyb3r-Jak3/blog/_site/ --url-ignore "/#.*/" --disable_external
 
 .deploy:
-  image: kroniak/ssh-client
+  image: cyb3rjak3/docker-curl-ssh
   before_script:
    - eval $(ssh-agent -s)
    - echo "$SSH_P_KEY" | tr -d '\r' | ssh-add - > /dev/null
@@ -68,3 +69,11 @@ deploy_schedule:
     url: https://blog.jwhite.network
   only:
    - schedules
+
+Clear_Cache:
+  image: cyb3rjak3/docker-curl-ssh
+  stage: clear
+  dependencies:
+  - deploy
+  script:
+  - curl -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache" -H "X-Auth-Email: $API_EMAIL" -H "$API_KEY" -H "Content-Type: application/json" --data '{"files":["https://blog.jwhite.network/*"]}'
