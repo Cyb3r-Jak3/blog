@@ -73,8 +73,8 @@ deploy_schedule:
 Clear_Cache:
   image: cyb3rjak3/docker-curl-ssh
   stage: clear
-  dependencies:
+  needs:
   - deploy_manual
   script:
   - chmod +x $script
-  - ./$script
+  - bash $script
