@@ -35,6 +35,13 @@ test:
     - bundle install --path vendor/bundle
     - bundle exec htmlproofer /builds/Cyb3r-Jak3/blog/_site/ --url-ignore "/#.*/" --disable_external
 
+html5validator:
+  stage: test
+  image: cyb3rjak3/html5validator:pypi
+  script:
+    - html5validator --root _site/ --format json --log INFO --also-check-css --ignore-re Attribute "built"
+
+
 .deploy:
   image: cyb3rjak3/docker-curl-ssh
   before_script:

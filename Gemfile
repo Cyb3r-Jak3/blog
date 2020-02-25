@@ -6,7 +6,7 @@ Encoding.default_internal = Encoding::UTF_8
 
 gem "bundler"
 gem 'rake'
-gem "jekyll", ">= 3.8.4"
+gem "jekyll"
 gem "jekyll-paginate"
 gem "jekyll-sitemap"
 gem 'jekyll-seo-tag'

@@ -7,4 +7,4 @@ Gitlab PipeLines:
 
 I use Galada theme for my blog. Which is written by [Artem Sheludko](https://github.com/artemsheludko).
 
- You can find my blog [here](https://blog.jwhite.network).
+You can find my blog [here](https://blog.jwhite.network).
