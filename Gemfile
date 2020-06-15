@@ -11,7 +11,6 @@ gem "jekyll-paginate"
 gem "jekyll-sitemap"
 gem 'jekyll-seo-tag'
 gem 'jekyll-feed'
-gem 'html-proofer'
 gem 'sassc'
 gem 'jekyll-twitter-plugin'
 gem 'jekyll-redirect-from'
