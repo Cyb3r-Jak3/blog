@@ -1,6 +1,7 @@
-image: ruby
+image: ruby:2.7
 include:
-  template: Dependency-Scanning.gitlab-ci.yml
+  - template: Dependency-Scanning.gitlab-ci.yml
+  - template: SAST.gitlab-ci.yml
 
 
 stages:
@@ -18,9 +19,11 @@ build:
   artifacts:
      paths:
      - /builds/Cyb3r-Jak3/blog/_site/* 
-  script:
+  before_script:
+    - bundle config set path vendor/bundle
     - gem install bundler
-    - bundle install --path vendor/bundle
+    - bundle install
+  script:
     - bundle exec jekyll build
 
 test:
@@ -28,11 +31,11 @@ test:
     paths:
       - vendor/bundle
   stage: test
-  dependencies:
-  - build
-  script:
+  before_script:
     - gem install bundler
-    - bundle install --path vendor/bundle
+    - bundle config set path vendor/bundle
+    - bundle install
+  script:
     - bundle exec htmlproofer /builds/Cyb3r-Jak3/blog/_site/ --url-ignore "/#.*/" --disable_external
 
 html5validator:
@@ -43,7 +46,11 @@ html5validator:
 
 
 .deploy:
+  stage: deploy
   image: cyb3rjak3/docker-curl-ssh
+  environment:
+    name: Self_Host
+    url: https://blog.jwhite.network
   before_script:
    - eval $(ssh-agent -s)
    - echo "$SSH_P_KEY" | tr -d '\r' | ssh-add - > /dev/null
@@ -56,26 +63,12 @@ html5validator:
 
 deploy_manual:
   extends: .deploy
-  stage: deploy
-  dependencies:
-   - build
-   - test
-  environment:
-    name: Self_Host
-    url: https://blog.jwhite.network
   when: manual
   except:
    - schedules
 
 deploy_schedule:
   extends: .deploy
-  stage: deploy
-  dependencies:
-   - build
-   - test
-  environment:
-    name: Self_Host
-    url: https://blog.jwhite.network
   only:
    - schedules
 
@@ -85,5 +78,5 @@ Clear_Cache:
   needs:
   - deploy_manual
   script:
-  - chmod +x $script
-  - bash $script
+    - >
+      curl -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache" -H "$API_KEY" -H "Content-Type: application/json"  --data '{"files":["https://blog.jwhite.network/*"]}'
