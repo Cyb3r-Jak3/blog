@@ -1,14 +1,22 @@
 image: ruby:2.7
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
+  - template: License-Scanning.gitlab-ci.yml
   - template: SAST.gitlab-ci.yml
-
+  - template: Secret-Detection.gitlab-ci.yml
+  - template: DAST.gitlab-ci.yml
+  
+variables:
+  DAST_WEBSITE: https://blog.jwhite.network
+  DAST_FULL_SCAN_ENABLED: "true"
+  
 
 stages:
  - build
  - test
  - deploy
  - clear
+ - dast
 
 
 build:
@@ -49,22 +57,9 @@ html5validator:
   script:
   - scp -rp -P 2222 /builds/Cyb3r-Jak3/blog/_site/*  $DeployUser@$ServerIP:$RPath
 
-deploy_manual:
-  extends: .deploy
-  when: manual
-  except:
-   - schedules
-
-deploy_schedule:
-  extends: .deploy
-  only:
-   - schedules
-
 Clear_Cache:
   image: cyb3rjak3/docker-curl-ssh
   stage: clear
-  needs:
-  - deploy_manual
   script:
     - >
       curl -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache" -H "$API_KEY" -H "Content-Type: application/json"  --data '{"files":["https://blog.jwhite.network/*"]}'
