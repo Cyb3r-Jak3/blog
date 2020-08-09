@@ -9,6 +9,7 @@ include:
 variables:
   DAST_WEBSITE: https://blog.jwhite.network
   DAST_FULL_SCAN_ENABLED: "true"
+  DAST_REQUEST_HEADERS: User-Agent: DAST/1.0
   
 
 stages:
@@ -41,7 +42,7 @@ html5validator:
     - html5validator --root /builds/Cyb3r-Jak3/blog/_site/ --format json --log INFO --also-check-css --ignore-re Attribute "built"
 
 
-.deploy:
+deploy:
   stage: deploy
   image: cyb3rjak3/docker-curl-ssh
   environment:
