@@ -9,7 +9,7 @@ include:
 variables:
   DAST_WEBSITE: https://blog.jwhite.network
   DAST_FULL_SCAN_ENABLED: "true"
-  DAST_REQUEST_HEADERS: User-Agent: DAST/1.0
+  DAST_REQUEST_HEADERS: "User-Agent: DAST/1.0"
   
 
 stages:
