@@ -1,0 +1,83 @@
+#-------------------------------
+# General Site Settings
+
+title: J Tech Blog
+description: Welcome to tech blog where I mostly rant about things cyber related. I also plan on put tutorials and walkthroughs here as well.  # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://blog.jwhite.network" # the base hostname & protocol for your site, e.g. http://example.com
+
+#-------------------------------
+# About Section
+author-name:   Jake
+author-avatar: about/about.png
+
+
+#-------------------------------
+# Social links
+social:
+  name: Cyb3r_Jak3
+  links:
+    - https://github.com/Cyb3r-Jak3/
+    - https://www.linkedin.com/in/jacob-white-01
+    - https://blog.jwhite.network
+    - https://keybase.io/jake1st
+    - https://twitter.com/Cyb3r_Jak3
+
+
+#-------------------------------
+# Comment Section (Disqus)
+disqus-identifier: jtech-1 # Add your shortname for Disqus Comment. For example mr-brown
+
+#Catergory
+collections:
+  category:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
+
+site.future: false
+
+
+
+#-------------------------------
+# Build settings
+markdown: kramdown
+permalink: ':title/'
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-twitter-plugin
+  - jekyll-redirect-from
+
+
+paginate: 7
+paginate_path: "/page/:num"
+
+include:
+  - _pages
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+#-------------------------------
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/bundle/
+  - .gitlab-ci.yml
+  - README.md
+  - LICENSE.txt
+#   - node_modules
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
