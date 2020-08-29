@@ -1,7 +1,5 @@
-image: ruby:2.7
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
-  - template: License-Scanning.gitlab-ci.yml
   - template: SAST.gitlab-ci.yml
   - template: Secret-Detection.gitlab-ci.yml
   - template: DAST.gitlab-ci.yml
@@ -10,11 +8,11 @@ stages:
  - build
  - test
  - deploy
- - clear
  - dast
 
 
 build:
+  image: ruby:2.7
   cache:
     paths:
       - vendor/bundle
@@ -52,28 +50,31 @@ deploy:
   script:
   - scp -rp -P 2222 /builds/Cyb3r-Jak3/blog/_site/*  $DeployUser@$ServerIP:$RPath
   rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
-      when: always
+    - if: '$CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE != "schedule"'
+      changes:
+        - blog/*
 
 Clear_Cache:
   image: cyb3rjak3/docker-curl-ssh
-  stage: clear
+  stage: deploy
   script:
     - >
+      sleep 10;
       curl -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache" -H "$API_KEY" -H "Content-Type: application/json"  --data '{"files":["https://blog.jwhite.network/*"]}'
   rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
-      when: always
-    
+    - if: '$CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE != "schedule"'
+      changes:
+        - blog/*
 
 dast:
   stage: dast
   dependencies: []
-  variables: 
+  variables:
     DAST_WEBSITE: https://blog.jwhite.network
     DAST_FULL_SCAN_ENABLED: "true"
     DAST_REQUEST_HEADERS: "User-Agent: DAST/1.0"
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
-      when: always
+      changes:
+        - blog/*  
   

@@ -1,0 +1,5 @@
+Contact: mailto:admin+security@jwhite.network
+Encryption: https://www.jwhite.network/keys/WebAdmin.asc
+Encryption: https://gitlab.com/Cyb3r-Jak3/Portfolio-Website/-/raw/master/public/keys/WebAdmin.asc
+Preferred-Languages: en
+Canonical: https://www.jwhite.network/security.txt
