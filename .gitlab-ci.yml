@@ -23,13 +23,13 @@ build:
   before_script:
     - bundle config set path vendor/bundle
     - gem install bundler
-    - bundle install
+    - bundle install --jobs 4 --retry 3
   script:
     - bundle exec jekyll build --source blog/
 
 html5validator:
   stage: test
-  image: cyb3rjak3/html5validator:pypi
+  image: cyb3rjak3/html5validator:source-alpine
   script:
     - html5validator --root /builds/Cyb3r-Jak3/blog/_site/ --format json --log INFO --also-check-css --ignore-re Attribute "built"
 
