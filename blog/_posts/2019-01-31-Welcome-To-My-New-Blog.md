@@ -2,7 +2,7 @@
 layout: post
 title: "Welcome to my new Blog"
 date: 2019-01-31 20:00:00 -5000
-image: hero_cybersecurity.png
+image: hero_cybersecurity.webp
 tags: [Welcome, Announcements]
 categories: [Announcements]
 ---

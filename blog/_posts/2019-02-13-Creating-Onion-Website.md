@@ -2,7 +2,7 @@
 layout: post
 title: "Creating an Onion Website"
 date: 2019-02-13 15:00:00 -5000
-image: torguide/tor_help.png
+image: torguide/tor_help.webp
 tags: [Tor, Tutorial]
 categories: [Tutorial]
 ---
@@ -37,7 +37,7 @@ Now tor and nginx are installed and we just have to configure them.
    1. ```sudo mkdir -p /var/www/onionsite/```
 2. Nginx config server file.
    1. You want to make a simple nginx config file in the /etc/nginx/sites-available/tor.
-   2. My file is ![Nginx config file](/img/torguide/nginxconfig.png)
+   2. My file is ![Nginx config file](/img/torguide/nginxconfig.webp)
 3. Link Nginx config.
    1. ```sudo ln -s /etc/nginx/sites-available/tor /etc/nginx/sites-enabled/```
    2. Use the full path when linking otherwise it can break.  
@@ -54,7 +54,7 @@ The default tor config is located at /etc/tor/torrc. I would recommend backing u
 - `HiddenServiceVersion 3`
   - You can omit this line if you want to run an onion v2 hidden service.  
 - `HiddenServicePort 80 127.0.0.1:445`  
-Mine looks like ![Tor Config File](/img/torguide/torconfig.png)
+Mine looks like ![Tor Config File](/img/torguide/torconfig.webp)
 
 And you now have a hidden service configure. Just restart all services with ```sudo systemctl restart nginx``` and ```sudo systemctl restart tor```. Your hidden service address will be generated in /var/lib/tor/onion/hostname/.  
 Enjoy your hidden service web site.

@@ -2,9 +2,9 @@
 layout: post
 title: "Continuous Integration"
 date: 2019-10-28 15:00:00 -5000
-image: gitlab/title.png
-tags: [Tutorial, Gitlab]
-categories: [Tutorial, GitLab]
+image: gitlab/title.webp
+tags: [Tutorial, Gitlab, CI]
+categories: [Tutorial, GitLab, CI]
 ---
 
 One tool that can be useful for developers is continuous integration (CI) as it allows them to keep building their application then easily deploy a working version the has been tested. There are many CI services out there such as Travis-CI, CircleCI, CodeShip, and Jenkins. Git providers have started to build their own right into their products. Github has their own called actions and both BitBucket and Gitlab call their pipelines. Even AWS and Azure now have created CI services such as AWS CodeBuild and Azure DevOps.  

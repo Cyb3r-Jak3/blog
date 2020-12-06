@@ -9,7 +9,7 @@ url: "https://blog.jwhite.network" # the base hostname & protocol for your site,
 #-------------------------------
 # About Section
 author-name:   Jake
-author-avatar: about/about.png
+author-avatar: about/about.webp
 
 
 #-------------------------------
@@ -19,7 +19,7 @@ social:
   links:
     - https://github.com/Cyb3r-Jak3/
     - https://www.linkedin.com/in/jacob-white-01
-    - https://blog.jwhite.network
+    - https://www.jwhite.network
     - https://keybase.io/jake1st
     - https://twitter.com/Cyb3r_Jak3
 
@@ -77,7 +77,3 @@ exclude:
   - .gitlab-ci.yml
   - README.md
   - LICENSE.txt
-#   - node_modules
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/

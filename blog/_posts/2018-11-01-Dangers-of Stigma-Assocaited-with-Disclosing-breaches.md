@@ -2,7 +2,7 @@
 layout: post
 title: "Dangers of Stigma Associated with Disclosing Breaches"
 date:  2018-10-30 18:00:00 +0000
-image: InfoSharing.png
+image: InfoSharing.webp
 tags: [Breach, Information-Sharing, Rant]
 categories: [Rants]
 ---

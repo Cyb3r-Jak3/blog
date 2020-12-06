@@ -21,8 +21,8 @@ build:
      paths:
      - /builds/Cyb3r-Jak3/blog/_site/* 
   before_script:
-    - bundle config set path vendor/bundle
     - gem install bundler
+    - bundle config set path vendor/bundle
     - bundle install --jobs 4 --retry 3
   script:
     - bundle exec jekyll build --source blog/
@@ -36,7 +36,7 @@ html5validator:
 
 deploy:
   stage: deploy
-  image: cyb3rjak3/docker-curl-ssh
+  image: registry.gitlab.com/cyb3r-jak3/docker-ssh-curl/docker-curl-ssh
   environment:
     name: Self_Host
     url: https://blog.jwhite.network
@@ -55,7 +55,7 @@ deploy:
         - blog/*
 
 Clear_Cache:
-  image: cyb3rjak3/docker-curl-ssh
+  image: registry.gitlab.com/cyb3r-jak3/docker-ssh-curl/docker-curl-ssh
   stage: deploy
   script:
     - >

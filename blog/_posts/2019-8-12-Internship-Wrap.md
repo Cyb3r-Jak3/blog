@@ -2,7 +2,7 @@
 layout: post
 title: "Cisco Meraki Wrap Up"
 date: 2019-08-12 15:00:00 -5000
-image: meraki/cisco-meraki-logo.png
+image: meraki/cisco-meraki-logo.webp
 tags: [Events]
 categories: [Events]
 ---
