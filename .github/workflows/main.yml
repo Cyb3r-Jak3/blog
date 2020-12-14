@@ -1,0 +1,26 @@
+name: Build & Check
+
+on: [push]
+
+
+jobs:
+  Docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Get Branch
+        run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+      - name: Setup Source For GitHub
+        run: echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+
+      - name: Build Blog Docker
+        run: docker build . --tag ghcr.io/cyb3r-jak3/blog_website:latest --cache-from ghcr.io/cyb3r-jak3/blog_website:latest
+
+      - name: Inspect
+        run: docker inspect ghcr.io/cyb3r-jak3/blog_website:latest 
+
+      - name: Push
+        if: github.event_name == 'push' && env.BRANCH == 'master'
+        run: docker push ghcr.io/cyb3r-jak3/blog_website:latest

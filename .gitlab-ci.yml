@@ -74,7 +74,7 @@ dast:
     DAST_FULL_SCAN_ENABLED: "true"
     DAST_REQUEST_HEADERS: "User-Agent: DAST/1.0"
   rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH == "master" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
       changes:
-        - blog/*  
+      - blog/*
   

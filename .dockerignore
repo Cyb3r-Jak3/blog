@@ -1,0 +1,6 @@
+.bundle
+_site
+vendor
+.jekyll-cache
+blog/.jekyll-cache
+blog/.bundle
