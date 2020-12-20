@@ -1,9 +1,9 @@
-name: HTML5 Check
+name: Main Workflow
 
 on: [push]
 
 jobs:
-  Lint:
+  HTML5_Check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -33,3 +33,34 @@ jobs:
             css: true
             log_level: INFO
             extra: --ignore-re Attribute "built"
+      
+      - name: Upload artifacts for Docker jobs
+        uses: actions/upload-artifact@v2
+        with:
+          name: site
+          path: |
+            public/
+            nginx.conf
+  Docker:
+    runs-on: ubuntu-20.04
+    needs: HTML5_Check
+    steps:
+      - name: Download math result for job 2
+        uses: actions/download-artifact@v2
+        with:
+          name: site
+      - name: Get Branch
+        run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+      - name: Setup Source For GitHub
+        run: echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+
+      - name: Build Blog Docker
+        run: docker build . --tag ghcr.io/cyb3r-jak3/blog_website:latest
+
+      - name: Inspect
+        run: docker inspect ghcr.io/cyb3r-jak3/blog_website:latest 
+
+      - name: Docker Push
+        if: github.event_name == 'push' && env.BRANCH == 'master'
+        run: docker push ghcr.io/cyb3r-jak3/blog_website:latest
