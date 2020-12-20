@@ -1,4 +1,4 @@
-name: Lint
+name: HTML5 Check
 
 on: [push]
 
