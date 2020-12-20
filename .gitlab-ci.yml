@@ -4,9 +4,9 @@ include:
   - template: Secret-Detection.gitlab-ci.yml
   - template: DAST.gitlab-ci.yml
   
-stages:
+# stages:
 #  - build
- - test
+#  - test
 #  - deploy
 #  - dast
 
@@ -67,7 +67,6 @@ stages:
 #         - blog/*
 
 dast:
-  stage: test
   dependencies: []
   variables:
     DAST_WEBSITE: https://blog.jwhite.network
