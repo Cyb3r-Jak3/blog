@@ -41,6 +41,8 @@ jobs:
           path: |
             public/
             nginx.conf
+            Dockerfile
+
   Docker:
     runs-on: ubuntu-20.04
     needs: HTML5_Check
