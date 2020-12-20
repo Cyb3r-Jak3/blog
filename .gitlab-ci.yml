@@ -5,66 +5,66 @@ include:
   - template: DAST.gitlab-ci.yml
   
 stages:
- - build
+#  - build
  - test
- - deploy
- - dast
+#  - deploy
+#  - dast
 
 
-build:
-  image: ruby:2.7
-  cache:
-    paths:
-      - vendor/bundle
-  stage: build
-  artifacts:
-     paths:
-     - /builds/Cyb3r-Jak3/blog/_site/* 
-  before_script:
-    - gem install bundler
-    - bundle config set path vendor/bundle
-    - bundle install --jobs 4 --retry 3
-  script:
-    - bundle exec jekyll build --source blog/
+# build:
+#   image: ruby:2.7
+#   cache:
+#     paths:
+#       - vendor/bundle
+#   stage: build
+#   artifacts:
+#      paths:
+#      - /builds/Cyb3r-Jak3/blog/_site/* 
+#   before_script:
+#     - gem install bundler
+#     - bundle config set path vendor/bundle
+#     - bundle install --jobs 4 --retry 3
+#   script:
+#     - bundle exec jekyll build --source blog/
 
-html5validator:
-  stage: test
-  image: cyb3rjak3/html5validator:source-alpine
-  script:
-    - html5validator --root /builds/Cyb3r-Jak3/blog/_site/ --format json --log INFO --also-check-css --ignore-re Attribute "built"
+# html5validator:
+#   stage: test
+#   image: cyb3rjak3/html5validator:source-alpine
+#   script:
+#     - html5validator --root /builds/Cyb3r-Jak3/blog/_site/ --format json --log INFO --also-check-css --ignore-re Attribute "built"
 
 
-deploy:
-  stage: deploy
-  image: registry.gitlab.com/cyb3r-jak3/docker-ssh-curl/docker-curl-ssh
-  environment:
-    name: Self_Host
-    url: https://blog.jwhite.network
-  before_script:
-   - eval $(ssh-agent -s)
-   - echo "$SSH_P_KEY" | tr -d '\r' | ssh-add - > /dev/null
-   - mkdir -p ~/.ssh
-   - chmod 700 ~/.ssh
-   - cat $SSH_KNOWN > ~/.ssh/known_hosts
-   - chmod 644 ~/.ssh/known_hosts
-  script:
-  - scp -rp -P 2222 /builds/Cyb3r-Jak3/blog/_site/*  $DeployUser@$ServerIP:$RPath
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE != "schedule"'
-      changes:
-        - blog/*
+# deploy:
+#   stage: deploy
+#   image: registry.gitlab.com/cyb3r-jak3/docker-ssh-curl/docker-curl-ssh
+#   environment:
+#     name: Self_Host
+#     url: https://blog.jwhite.network
+#   before_script:
+#    - eval $(ssh-agent -s)
+#    - echo "$SSH_P_KEY" | tr -d '\r' | ssh-add - > /dev/null
+#    - mkdir -p ~/.ssh
+#    - chmod 700 ~/.ssh
+#    - cat $SSH_KNOWN > ~/.ssh/known_hosts
+#    - chmod 644 ~/.ssh/known_hosts
+#   script:
+#   - scp -rp -P 2222 /builds/Cyb3r-Jak3/blog/_site/*  $DeployUser@$ServerIP:$RPath
+#   rules:
+#     - if: '$CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE != "schedule"'
+#       changes:
+#         - blog/*
 
-Clear_Cache:
-  image: registry.gitlab.com/cyb3r-jak3/docker-ssh-curl/docker-curl-ssh
-  stage: deploy
-  script:
-    - >
-      sleep 10;
-      curl -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache" -H "$API_KEY" -H "Content-Type: application/json"  --data '{"files":["https://blog.jwhite.network/*"]}'
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE != "schedule"'
-      changes:
-        - blog/*
+# Clear_Cache:
+#   image: registry.gitlab.com/cyb3r-jak3/docker-ssh-curl/docker-curl-ssh
+#   stage: deploy
+#   script:
+#     - >
+#       sleep 10;
+#       curl -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/purge_cache" -H "$API_KEY" -H "Content-Type: application/json"  --data '{"files":["https://blog.jwhite.network/*"]}'
+#   rules:
+#     - if: '$CI_COMMIT_BRANCH == "master" && $CI_PIPELINE_SOURCE != "schedule"'
+#       changes:
+#         - blog/*
 
 dast:
   stage: dast

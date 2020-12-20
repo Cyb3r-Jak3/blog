@@ -1,0 +1,30 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+      
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ hashFiles('**/Gemfile.lock') }}
+
+      - name: Setup Environment
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      - name: Build Site
+        run: bundle exec jekyll build --source blog/ --destination public/
+      
+      - name: HTML5 Validation
+        uses: docker://cyb3rjak3/html5validator:source-alpine
+        run: html5validator --root public/ --format json --log INFO --also-check-css --ignore-re Attribute "built"
