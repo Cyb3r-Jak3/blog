@@ -15,7 +15,9 @@ jobs:
         run: echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
 
       - name: Build Blog Docker
-        run: docker build . --tag ghcr.io/cyb3r-jak3/blog_website:latest --cache-from ghcr.io/cyb3r-jak3/blog_website:latest
+        run: |
+          docker pull ghcr.io/cyb3r-jak3/blog_website:latest
+          docker build . --tag ghcr.io/cyb3r-jak3/blog_website:latest --cache-from ghcr.io/cyb3r-jak3/blog_website:latest
 
       - name: Inspect
         run: docker inspect ghcr.io/cyb3r-jak3/blog_website:latest 
