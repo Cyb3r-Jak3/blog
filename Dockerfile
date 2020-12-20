@@ -1,7 +1,7 @@
 FROM bretfisher/jekyll:latest as builder
 
 COPY blog ./blog
-COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
 
 RUN bundle install --jobs 4 --retry 3
 
