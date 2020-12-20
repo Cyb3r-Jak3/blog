@@ -4,3 +4,5 @@ vendor
 .jekyll-cache
 blog/.jekyll-cache
 blog/.bundle
+README.md
+LICENSE.txt

@@ -1,7 +1,6 @@
-name: Build & Check
+name: Docker
 
 on: [push]
-
 
 jobs:
   Docker:
