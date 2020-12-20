@@ -12,9 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Get Branch
-        run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
-
       - name: Setup Source For GitHub
         run: echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
 
@@ -25,5 +22,5 @@ jobs:
         run: docker inspect ghcr.io/cyb3r-jak3/blog_website:latest 
 
       - name: Push
-        if: github.event_name == 'push' && env.BRANCH == 'master'
+        if: github.event_name == 'push'
         run: docker push ghcr.io/cyb3r-jak3/blog_website:latest
