@@ -67,7 +67,7 @@ stages:
 #         - blog/*
 
 dast:
-  stage: dast
+  stage: test
   dependencies: []
   variables:
     DAST_WEBSITE: https://blog.jwhite.network
