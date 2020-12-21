@@ -1,9 +1,9 @@
 name: Main Workflow
 
-on: 
+on:
   push:
   schedule:
-    - 0 10 * * *
+    - cron: 0 10 * * *
 
 jobs:
   HTML5_Check:
