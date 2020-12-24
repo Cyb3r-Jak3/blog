@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-image: about/intro-bg.png
+image: about/intro-bg.webp
 permalink: /about/
 ---
 ## Welcome
