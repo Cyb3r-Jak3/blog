@@ -36,38 +36,3 @@ jobs:
             css: true
             log_level: INFO
             extra: --ignore-re Attribute "built"
-      
-      - name: Upload artifacts for Docker jobs
-        uses: actions/upload-artifact@v2
-        with:
-          name: build_items
-          retention-days: 1
-          path: |
-            public/
-            nginx.conf
-            Dockerfile
-
-  Docker:
-    runs-on: ubuntu-20.04
-    needs: HTML5_Check
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: build_items
-
-      - name: Get Branch
-        run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
-
-      - name: Build Blog Docker
-        run: docker build . --tag ghcr.io/cyb3r-jak3/blog_website:latest
-
-      - name: Inspect
-        run: docker inspect ghcr.io/cyb3r-jak3/blog_website:latest 
-
-      - name: Login to GitHub
-        if: github.event_name == 'push' && env.BRANCH == 'master'
-        run: echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
-
-      - name: Docker Push
-        if: github.event_name == 'push' && env.BRANCH == 'master'
-        run: docker push ghcr.io/cyb3r-jak3/blog_website:latest
