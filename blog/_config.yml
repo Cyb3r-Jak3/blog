@@ -43,6 +43,9 @@ defaults:
 
 site.future: false
 
+webrick:
+  headers:
+    Permissions-Policy: interest-cohort=()
 
 
 #-------------------------------
