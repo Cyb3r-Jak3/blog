@@ -1,13 +1,27 @@
 version: 2
 updates:
-  - package-ecosystem: "bundler"
+  - package-ecosystem: bundler
     vendor: true
     directory: "/"
     schedule:
       interval: "weekly"
     assignees:
       - "Cyb3r-Jak3"
+    commit-message:
+      prefix: "Bundle updates"
     labels:
       - "dependencies"
+    reviewers:
+      - "Cyb3r-Jak3"
+
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "Cyb3r-Jak3"
+    commit-message:
+      prefix: "Action Update"
     reviewers:
       - "Cyb3r-Jak3"

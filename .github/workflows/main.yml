@@ -29,10 +29,17 @@ jobs:
         run: bundle exec jekyll build --source blog/ --destination public/
       
       - name: HTML5 Validation
-        uses: Cyb3r-Jak3/html5validator-action@v0.4.4
+        uses: Cyb3r-Jak3/html5validator-action@v0.6.1
         with:
             root: public/
             format: json
             css: true
             log_level: INFO
             extra: --ignore-re Attribute "built"
+    
+      - name: Upload Build Site
+        uses: actions/upload-artifact@v2
+        with:
+          name: site
+          path: public/
+          retention-days: 30
