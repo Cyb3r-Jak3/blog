@@ -43,3 +43,12 @@ jobs:
           name: site
           path: public/
           retention-days: 30
+      
+      - name: Clear Cloudflare cache
+        use: Cyb3r-Jak3/action-cloudflare-cache@v1.0.0
+        if: github.ref == 'refs/heads/master' && github.event_name == ‘push’
+        with:
+          zone: ${{ secrets.CLOUDFLARE_ZONE }}
+          api_token: ${{ secrets.CLOUDFLARE_TOKEN }}
+          urls: |
+            https://blog.jwhite.network/*
