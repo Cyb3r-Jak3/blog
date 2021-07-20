@@ -45,7 +45,7 @@ jobs:
           retention-days: 30
       
       - name: Clear Cloudflare cache
-        uses: Cyb3r-Jak3/action-cloudflare-cache@v1.0.0
+        uses: Cyb3r-Jak3/action-cloudflare-cache@v1.1.0
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         with:
           zone: ${{ secrets.CLOUDFLARE_ZONE }}
