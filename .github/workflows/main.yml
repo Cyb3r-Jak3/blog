@@ -42,7 +42,7 @@ jobs:
         with:
           name: site
           path: public/
-          retention-days: 30
+          retention-days: 7
       
       - name: Clear Cloudflare cache
         uses: Cyb3r-Jak3/action-cloudflare-cache@v1.1.0
