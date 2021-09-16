@@ -37,7 +37,7 @@ jobs:
             log_level: INFO
             extra: --ignore-re Attribute "built"
     
-      - name: Upload Build Site
+      - name: Upload Built Site
         uses: actions/upload-artifact@v2
         with:
           name: site
