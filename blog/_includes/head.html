@@ -1,4 +1,5 @@
 <head>
+  <meta Built="{{ site.time | date: "%c %Z" }}">
 	<meta charset="utf-8">
 	<title>{% if page.title %}{{page.title}} - {{site.title}}{% else %}{{site.title}}{% endif %}</title>
 
@@ -70,7 +71,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:image" content="">
   
-
+  <link rel="shortcut icon" type="image/png" href="/favicon.png?">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/img/favicon/apple-touch-icon.png" | prepend: site.baseurl }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/img/favicon/favicon-32x32.png" | | prepend: site.baseurl }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{"/assets/img/favicon/favicon-16x16.png" | | prepend: site.baseurl }}">
@@ -92,5 +93,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- Styles -->
-	<link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0df0844e7b0a49378ce5c0aefdfbe94f"}'></script>
 </head>
