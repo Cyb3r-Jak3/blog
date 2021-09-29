@@ -1,0 +1,38 @@
+# This is a sample build configuration for Ruby.
+# Check our guides at https://confluence.atlassian.com/x/8r-5Mw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: ruby:latest
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Build Blog
+          caches:
+              - bundler
+          script:
+            - gem install bundler
+            - bundler --version
+            - bundle install --path vendor/bundle
+            - bundle exec jekyll build
+            - bundle exec htmlproofer ./_site --url-ignore "/#.*/" --disable_external
+          artifacts:
+            - _site/**
+      - step:
+          name: Deploy to Host
+          deployment: production
+          trigger: manual
+          script:
+            - pipe: atlassian/scp-deploy:0.3.1
+              variables:
+                USER: '$DeploymentUser'
+                SERVER: '$ServerIP'
+                REMOTE_PATH: '$RPath'
+                LOCAL_PATH: '_site/*'
+                EXTRA_ARGS: ' -P 2222'
+
+definitions:
+  caches:
+     bundler: vendor/bundle

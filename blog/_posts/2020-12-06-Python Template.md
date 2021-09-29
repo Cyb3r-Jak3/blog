@@ -10,6 +10,7 @@ One of the things that I discovered when working on python libraries, is that a 
 [Template Repo](https://github.com/Cyb3r-Jak3/python_template_repo)
 
 Some of the key features are:
+
 * GitHub Action Templates
 * Auto deploy to PyPi
 * Issue and Pull Request Templates
