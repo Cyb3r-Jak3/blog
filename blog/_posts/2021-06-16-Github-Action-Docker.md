@@ -12,7 +12,6 @@ I have used them to build docker pipelines for container building and deployment
 
 Full file:
 
-
 ```yaml
 {% raw %}
 name: Docker

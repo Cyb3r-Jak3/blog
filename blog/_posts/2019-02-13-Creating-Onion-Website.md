@@ -54,7 +54,7 @@ The default tor config is located at /etc/tor/torrc. I would recommend backing u
 - `HiddenServiceVersion 3`
   - You can omit this line if you want to run an onion v2 hidden service.  
 - `HiddenServicePort 80 127.0.0.1:445`  
-Mine looks like ![Tor Config File](/img/torguide/torconfig.webp)
+Mine looks like ![Tor Config File](/assets/img/torguide/torconfig.webp)
 
 And you now have a hidden service configure. Just restart all services with ```sudo systemctl restart nginx``` and ```sudo systemctl restart tor```. Your hidden service address will be generated in /var/lib/tor/onion/hostname/.  
 Enjoy your hidden service web site.
