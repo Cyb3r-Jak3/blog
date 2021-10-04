@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "New Status Site"
-date: 2021-06-16 10:00:00 -5000
+date: 2021-09-27 10:00:00 -5000
 image: status-site/logo.png
 tags: [Announcements]
 categories: [Announcements]
