@@ -3,7 +3,7 @@ description: >
   Welcome to tech blog where I mostly rant about things cyber related. I have tutorials and walkthroughs here as well.
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://blog.jwhite.network"
+url: "https://blog.cyberjake.xyz"
 
 # Author Settings
 author: Cyb3r Jak3 # add your name
@@ -28,4 +28,5 @@ plugins:
 paginate: 8
 paginate_path: "/page/:num"
 
+include: ["_headers", ]
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]

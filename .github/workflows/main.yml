@@ -52,3 +52,4 @@ jobs:
           api_token: ${{ secrets.CLOUDFLARE_TOKEN }}
           urls: |
             https://blog.jwhite.network/*
+            https://blog.cyberjake.xyz/*
