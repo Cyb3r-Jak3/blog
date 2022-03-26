@@ -7,4 +7,4 @@ Welcome to the repo for my blog.
 
 I use Flexible-Jekyll theme for my blog. Which is written by [Artem Sheludko](https://github.com/artemsheludko).
 
-You can find my blog [here](https://blog.jwhite.network).
+You can find my blog [here](https://blog.cyberjake.xyz).
