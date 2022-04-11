@@ -38,7 +38,7 @@ jobs:
             extra: --ignore-re Attribute "built"
     
       - name: Upload Built Site
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: site
           path: public/
