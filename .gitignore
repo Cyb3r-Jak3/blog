@@ -6,3 +6,4 @@ vendor/**
 .vscode
 space.code-workspace
 public/**
+node_modules
