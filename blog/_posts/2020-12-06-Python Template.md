@@ -16,4 +16,4 @@ Some of the key features are:
 * Issue and Pull Request Templates
 * Auto Configured install and test requires
 
-Please go check it out and any feedback is appreciated! 
+Please go check it out and any feedback is appreciated!

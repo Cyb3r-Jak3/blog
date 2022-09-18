@@ -33,4 +33,4 @@ ingress:
 
 To be able to connect to your server you need the client to proxy the connection. This can be done by running `cloudflared access tcp --hostname <url of your server> --url localhost:9210`. Then open your minecraft client and go to multiplayer and add a new server then for the address use `localhost:9210`. Then boom your server will be there to access.
 
-![Final Result](/assets/img/minecraft-cloudflared/tada.webp)\
+![Final Result](/assets/img/minecraft-cloudflared/tada.webp)

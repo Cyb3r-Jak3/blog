@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Fail2Ban + CloudFlare"
+title: "Fail2Ban + Cloudflare"
 date: 2019-05-30 15:00:00 -5000
 image: fail2ban/nginx-fail2ban-security.webp
 tags: [Tutorial]
