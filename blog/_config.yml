@@ -13,7 +13,7 @@ social-linkedin: jacob-white-01
 social-email: connect@cyberjake.xyz
 
 # Disqus
-discus-identifier: jtech-1
+# discus-identifier: jtech-1
 
 # Build Settings
 markdown: kramdown
