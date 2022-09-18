@@ -2,13 +2,11 @@ title: Cyb3r Jak3 - Tech Blog
 description: >
   Welcome to tech blog where I mostly rant about things cyber related. I have tutorials and walkthroughs here as well.
 permalink: ':title/'
-baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.cyberjake.xyz"
 
-# Author Settings
-author: Cyb3r Jak3 # add your name
+author: Cyb3r Jak3 
 author-img: about/about.webp
-about-author: I enjoy learning about new technologies and exploring new ways of doing things. I love discovering new platforms and new ways of doing things and using technology to its fullest potential. # add description
+about-author: I enjoy learning about new technologies and exploring new ways of doing things. I love discovering new platforms and new ways of doing things and using technology to its fullest potential.
 social-twitter: Cyb3r_Jak3
 social-github: Cyb3r-Jak3
 social-linkedin: jacob-white-01

@@ -37,7 +37,7 @@ Now tor and nginx are installed and we just have to configure them.
    1. ```sudo mkdir -p /var/www/onionsite/```
 2. Nginx config server file.
    1. You want to make a simple nginx config file in the /etc/nginx/sites-available/tor.
-   2. My file is ![Nginx config file](/img/torguide/nginxconfig.webp)
+   2. My file is ![Nginx config file](/assets/img/torguide/nginxconfig.webp)
 3. Link Nginx config.
    1. ```sudo ln -s /etc/nginx/sites-available/tor /etc/nginx/sites-enabled/```
    2. Use the full path when linking otherwise it can break.  

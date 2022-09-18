@@ -2,7 +2,7 @@
 layout: post
 title: "Github Actions Docker Pipeline"
 date: 2021-06-16 10:00:00  -5000
-image: github-actions/logo.png
+# image: github-actions/logo.png
 tags: [GitHub, Actions, Docker, CI]
 categories: [Docker, CI]
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "Minecraft Server using Cloudflared"
 date: 2022-03-26 10:00:00 -5000
-image: minecraft-cloudflare/title.webp
+# image: minecraft-cloudflared/title.webp
 tags: [Tutorial, Cloudflare]
 categories: [Tutorial]
 ---
