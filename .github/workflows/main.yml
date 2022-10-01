@@ -9,6 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1.5.1
+        with:
+          args: blog/_posts/*.md
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7'
@@ -34,14 +42,6 @@ jobs:
             css: true
             log_level: INFO
             extra: --ignore-re Attribute "built"
-      
-      - name: Link Checker
-        uses: lycheeverse/lychee-action@v1.5.1
-        with:
-          args: blog/_posts/*.md
-          fail: true
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Upload Built Site
         uses: actions/upload-artifact@v3
