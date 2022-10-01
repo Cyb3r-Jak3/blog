@@ -6,7 +6,7 @@ date: 2021-06-16 10:00:00  -5000
 tags: [GitHub, Actions, Docker, CI]
 categories: [Docker, CI]
 ---
-Something that I have been using more and more is [Github Actions](https://github.com/actions). It is an easy to use tool to run tests and build in CI. One of the nice things about it is that is is more module than [GitLab Pipeline]({% post_url 2019-10-28-Continuous Integration %}). There is also a marketplace of company and user created actions so there are many options to choose when you are looking to build something out.
+Something that I have been using more and more is [Github Actions](https://github.com/actions). It is an easy to use tool to run tests and build in CI. One of the nice things about it is that is is more module than [GitLab Pipeline]({% post_url 2019-10-28-Continuous-Integration %}). There is also a marketplace of company and user created actions so there are many options to choose when you are looking to build something out.
 
 I have used them to build docker pipelines for container building and deployment. I found that actions workflow were great to keep a simple and clean workflow for my [pypy-flask](https://github.com/Cyb3r-Jak3/pypy-flask) docker image. The full workflow file is available [in the repo](https://github.com/Cyb3r-Jak3/pypy-flask/blob/main/.github/workflows/docker.yml) but I will be breaking it down below.
 
