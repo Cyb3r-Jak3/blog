@@ -2,8 +2,6 @@ name: Main Workflow
 
 on:
   push:
-  schedule:
-    - cron: 0 10 * * *
 
 jobs:
   HTML5_Check:
@@ -36,7 +34,15 @@ jobs:
             css: true
             log_level: INFO
             extra: --ignore-re Attribute "built"
-    
+      
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1.5.1
+        with:
+          args: public/**
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - name: Upload Built Site
         uses: actions/upload-artifact@v3
         with:
