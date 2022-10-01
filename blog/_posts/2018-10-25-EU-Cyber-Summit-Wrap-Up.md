@@ -7,7 +7,7 @@ tags: [Cyber-Crime, Cyber-Resilience, EU-Cyber-Summit,Events]
 categories: [Events, CyberSecurity]
 ---
 
-## [EU Cyber Summit](https://eucybersummit.com/)
+## EU Cyber Summit
 
 On October 24, I got to attend to EU Cyber Summit as I volunteered there. Some of the notable speakers included Edward Snowden, Paul C Dwyer, and Michelle Dewberry. While meeting current technical professionals, I got to attend a couple of panel sessions. Two sessions that stuck out to me were one about cyber resilience and the other about cyber-enabled crime.  
 
