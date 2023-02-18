@@ -7,11 +7,11 @@ tags: [Tutorial, Cloudflare]
 categories: [Tutorial]
 ---
 
-This is a short tutorial on setting up [cloudflared](https://github.com/cloudflare/cloudflared) to proxy DoH for use with service like [Pi.Hole](https://pi-hole.net/). Old guides use `sudo cloudflared service install --legacy` and the `--legacy` flag is not longer available.
+This is a short tutorial on setting up [cloudflared](https://github.com/cloudflare/cloudflared) to proxy DoH for use with service like [Pi.Hole](https://pi-hole.net/). Old guides use `sudo cloudflared service install --legacy` and the `--legacy` flag was [removed](https://github.com/cloudflare/cloudflared/commit/706523389c83ad3bc9b950bd6cb712864e23f586#diff-b10aaca38c8d89afa4c14ffbc373252118ed207da5216b611e1df2405643af08).
 
 ## Download
 
-The first thing that is needed is to install cloudflared. Installation instructions are available [here](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide/local/#set-up-a-tunnel-locally-cli-setup). For linux based OSs, I use the [cloudflared package repo](https://pkg.cloudflare.com/index.html) as it makes it easier to update.
+The first thing that is needed is to install cloudflared, [install instructions](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide/local/#set-up-a-tunnel-locally-cli-setup). For linux based OSs, I use the [cloudflared package repo](https://pkg.cloudflare.com/index.html) as it makes it easier to update.
 
 If you want to manually install it then you can use the following commands. Please make a note on the architecture you are installed on and make adjustments as needed. See the [releases](https://github.com/cloudflare/cloudflared/releases/latest/) for a full list of supported architectures.
 
@@ -44,7 +44,7 @@ WantedBy=multi-user.target
 
 *You can change the upstream servers to others such as Google's `https://8.8.8.8/dns-query` or Cloudflare's Zero Trust Gateway DNS servers.*
 
-### Using Config file
+### Using Config File
 
 If you want to add your cloudflared options as a config file then run the following commands
 
@@ -72,10 +72,12 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now cloudflared-doh.service
 ```
 
-Make sure that the service is health:
+Make sure that the service is healthly:
+
 `sudo systemctl status cloudflared`
 
 Test that DNS is resolving:
+
 `dig @127.0.0.1 -p 5053 google.com`
 
 ## Running with Docker
