@@ -1,7 +1,7 @@
 title: Cyb3r Jak3 - Tech Blog
 description: >
   Welcome to tech blog where I mostly rant about things cyber related. I have tutorials and walkthroughs here as well.
-permalink: ':title/'
+permalink: '/:title/'
 url: "https://blog.cyberjake.xyz"
 
 author: Cyb3r Jak3 
