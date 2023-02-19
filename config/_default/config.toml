@@ -4,6 +4,7 @@ canonifyurls = true
 paginate = 7
 theme = ["github.com/chipzoller/hugo-clarity"]
 
+enableGitInfo = true
 
 [taxonomies]
 category = "categories"
