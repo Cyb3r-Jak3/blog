@@ -1,6 +1,6 @@
 version: 2
 updates:
-  - package-ecosystem: bundler
+  - package-ecosystem: gomod
     vendor: true
     directory: "/"
     schedule:
@@ -8,9 +8,7 @@ updates:
     assignees:
       - "Cyb3r-Jak3"
     commit-message:
-      prefix: "Bundle updates"
-    labels:
-      - "dependencies"
+      prefix: "Go updates"
     reviewers:
       - "Cyb3r-Jak3"
 

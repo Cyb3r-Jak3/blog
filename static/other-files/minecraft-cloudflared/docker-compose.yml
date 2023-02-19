@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  mc:
+    image: itzg/minecraft-server:java17-alpine
+    tty: true
+    stdin_open: true
+    environment:
+      EULA: "TRUE"
+      MOTD: "Hello via Cloudflared"
+    volumes:
+      - ./minecraft_data:/data
+
+  cloudflared:
+      image: cloudflare/cloudflared:2022.3.4
+      user: root
+      command: tunnel run
+      volumes:
+          - './cloudflared:/etc/cloudflared'

@@ -1,5 +1,0 @@
-Contact: mailto:security@jwhite.network
-Encryption: https://www.cyberjake.xyz/keys/connect.asc
-Encryption: https://raw.githubusercontent.com/Cyb3r-Jak3/portfolio-website/master/public/keys/connect.asc
-Preferred-Languages: en
-Canonical: https://www.cyberjake.xyz/security.txt

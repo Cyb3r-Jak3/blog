@@ -1,0 +1,5 @@
+Contact: mailto:security@cyberjake.xyz
+Encryption: https://cyberjake.xyz/files/connect@cyberjake.xyz.asc
+Encryption: https://raw.githubusercontent.com/Cyb3r-Jak3/portfolio/main/static/files/connect@cyberjake.xyz.asc
+Preferred-Languages: en
+Canonical: https://blog.cyberjake.xyz/security.txt
