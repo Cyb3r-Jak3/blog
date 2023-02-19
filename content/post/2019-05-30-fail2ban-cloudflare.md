@@ -3,7 +3,7 @@ author: "Cyb3r Jak3"
 title: "Fail2Ban + Cloudflare"
 date: "2019-05-30"
 tags: [ Tutorial, Cloudflare ]
-categories: [ Tutorial, Cloudflare ]
+categories: [ Tutorial ]
 thumbnail: "images/fail2ban/nginx-fail2ban-security.webp"
 ---
 

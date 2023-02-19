@@ -4,11 +4,8 @@ on:
     branches:
     - "**"
     paths:
-      - ".github/actions/spelling/**"
       - "content/**"
       - ".github/workflows/spellcheck.yml"
-  pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
   spell-check:
@@ -28,4 +25,5 @@ jobs:
       uses: codespell-project/actions-codespell@master
       with:
         path: content/post/
+        check_filenames: true
 

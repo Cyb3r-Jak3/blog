@@ -3,7 +3,7 @@ author: "Cyb3r Jak3"
 title: "Cloudflare Log Analysis"
 date: "2019-10-20"
 tags: [ Tutorial, Cloudflare, Logflare, BigQuery ]
-categories: [ Tutorial, Cloudflare ]
+categories: [ Tutorial ]
 thumbnail: "images/logflare/title.webp"
 ---
 

@@ -4,7 +4,7 @@ enableSearch = true
 # socials
 twitter = "@Cyb3rJak3"
 largeTwitterCard = false # set to true if you want to show a large twitter card image. The default is a small twitter card image
-introDescription = "Technologist, perpetual student, teacher, continual incremental improvement."
+introDescription = "Privacy and transparently oriented Python, Go and DevOps engineer"
 # introURL = "about/" # set the url for the 'read more' button below the introDescription, or set to false to not show the button
 keywords = ["blog", "cyb3rjak3"] # Set your site's meta tag (SEO) keywords here. Alternatively set these in your home page content file e.g. content/_index.md. Whatever is set in the latter will take precedence.
 
