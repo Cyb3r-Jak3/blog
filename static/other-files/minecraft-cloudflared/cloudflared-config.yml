@@ -1,0 +1,6 @@
+tunnel: <tunnel-id>
+credentials-file: <path/to/your/tunnel/file.json>
+ingress:
+  - hostname: mc.cyberjake.xyz
+    service: tcp://mc:25565
+  - service: http_status:404

@@ -1,9 +1,9 @@
-_site
-.sass-cache
-.jekyll-metadata
-.jekyll-cache/
-vendor/**
-.vscode
-space.code-workspace
-public/**
-node_modules
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+
+# Temporary lock file while building
+/.hugo_build.lock

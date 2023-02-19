@@ -1,0 +1,31 @@
+name: Codespell
+on:
+  push:
+    branches:
+    - "**"
+    paths:
+      - ".github/actions/spelling/**"
+      - "content/**"
+      - ".github/workflows/spellcheck.yml"
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  spell-check:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      actions: read
+      security-events: write
+    steps:
+    -
+      name: Checkout repository
+      uses: actions/checkout@v3
+    -
+      name: Spell-Checking
+      uses: codespell-project/actions-codespell@master
+      with:
+        path: content/post/
+

@@ -1,0 +1,33 @@
+[[main]]
+  name = "Home"
+  url = ""
+  weight = -110
+
+# Submenus are done this way: parent -> identifier
+
+[[main]]
+  name = "Short links"
+  weight = 3
+  url = "https://api.cyberjake.xyz/redirects/"
+
+# [[main]]
+#   name = "About"
+#   url = "about/"
+#   weight = -107
+
+# social menu links
+
+[[social]]
+  name = "github"
+  type = "social"
+  weight = 1
+  url = "https://github.com/Cyb3r-Jak3"
+[[social]]
+  name = "twitter"
+  weight = 2
+  url = "https://twitter.com/Cyb3r_Jak3"
+
+[[social]]
+  name = "rss"
+  weight = 3
+  url = "index.xml"

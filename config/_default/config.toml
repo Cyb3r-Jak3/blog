@@ -1,0 +1,14 @@
+baseurl = "https://blog.cyberjake.xyz/"
+title = "Cyb3r Jak3 - Tech Blog"
+canonifyurls = true
+paginate = 7
+theme = ["github.com/chipzoller/hugo-clarity"]
+
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
