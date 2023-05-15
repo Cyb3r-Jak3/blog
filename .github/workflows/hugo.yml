@@ -36,7 +36,7 @@ jobs:
         run: hugo --minify
 
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v1.7.0
+        uses: lycheeverse/lychee-action@v1.8.0
         with:
           args: content/post/*.md --exclude .onion --exclude .webp --exclude .yml --exclude .json --exclude .pdf
           fail: true
