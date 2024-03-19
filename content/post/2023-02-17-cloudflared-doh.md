@@ -4,7 +4,7 @@ date: "2023-02-17"
 description: "Tutorial on setting up cloudflared to proxy dns via DoH"
 featured: true
 tags: [ Cloudflare, Tutorial ]
-categories: [ Tutorial ]
+categories: [ Tutorial, Cloudflare ]
 ---
 
 This is a short tutorial on setting up [cloudflared](https://github.com/cloudflare/cloudflared) to proxy DoH for use with service like [Pi.Hole](https://pi-hole.net/). Old guides use `sudo cloudflared service install --legacy` and the `--legacy` flag was [removed](https://github.com/cloudflare/cloudflared/commit/706523389c83ad3bc9b950bd6cb712864e23f586#diff-b10aaca38c8d89afa4c14ffbc373252118ed207da5216b611e1df2405643af08).
