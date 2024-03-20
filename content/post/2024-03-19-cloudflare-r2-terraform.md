@@ -2,7 +2,7 @@
 author: "Cyb3r Jak3"
 title: "R2 API Token Terraform Module"
 date: "2024-03-19"
-tags: [ Tutorial, Cloudflare, Terraform ]
+tags: [ Tutorial, Cloudflare, Terraform, CoPilot ]
 categories: [ Tutorial, Cloudflare, Terraform ]
 thumbnail: "images/terraform/terraform.svg"
 ---
