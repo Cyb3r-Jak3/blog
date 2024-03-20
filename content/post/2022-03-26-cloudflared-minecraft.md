@@ -3,7 +3,7 @@ title: "Minecraft Server using Cloudflared"
 date: "2022-03-26"
 description: "Tutorial on setting up a minecraft server via cloudflared"
 tags: [ Cloudflare, Tutorial, Minecraft ]
-categories: [ Tutorial ]
+categories: [ Tutorial, Cloudflare ]
 featured: true
 ---
 

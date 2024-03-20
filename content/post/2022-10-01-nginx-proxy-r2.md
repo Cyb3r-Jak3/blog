@@ -4,7 +4,7 @@ title: "Nginx + R2"
 date: "2022-10-01"
 description: "Tutorial on setting up cloudflared to proxy dns via DoH"
 tags: [ Cloudflare, Tutorial, Nginx, R2 ]
-categories: [ Tutorial ]
+categories: [ Tutorial, Cloudflare ]
 aliases: ["nginx-r2"]
 ---
 
