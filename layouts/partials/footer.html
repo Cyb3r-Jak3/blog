@@ -4,10 +4,10 @@
   {{ partialCached "math" . }}
 {{- end }}
 {{- $iconsDir := default "icons/" .Site.Params.iconsDir }}
-{{- $defaultFooterLogo := printf "%s%s" $iconsDir "apple-touch-icon.png"}}
+{{- $defaultFooterLogo := printf "%s%s" $iconsDir "favicon.png"}}
 <footer class="footer">
   <div class="footer_inner wrap pale">
-    <img src='{{ absURL (default $defaultFooterLogo $s.footerLogo) }}' class="icon icon_2 transparent" alt="{{ $c }}">
+    <img src='{{ absURL (default $defaultFooterLogo $s.footerLogo) }}' class="icon_2" alt="{{ $c }}">
     <p>{{ T "copyright" | markdownify }}{{ with $s.since }}&nbsp;{{ . }}-{{ end }}&nbsp;<span class="year"></span>&nbsp;{{ upper $c }}. {{ T "all_rights" | markdownify }} | Git Hash <a href='https://github.com/Cyb3r-Jak3/blog/tree/{{ .GitInfo.Hash }}'>{{ .GitInfo.AbbreviatedHash }}</a></p>
     {{- partialCached "top" .}}
   </div>
