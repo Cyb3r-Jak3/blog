@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   mc:
-    image: itzg/minecraft-server:java17-alpine
+    image: itzg/minecraft-server:java17-alpine@sha256:e136e147f56aaf4f8b156fbd856896848c1571e7820f2bb3a3f3531b6dec4242
     tty: true
     stdin_open: true
     environment:
