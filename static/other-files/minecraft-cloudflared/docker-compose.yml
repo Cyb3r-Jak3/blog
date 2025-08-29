@@ -12,7 +12,7 @@ services:
       - ./minecraft_data:/data
 
   cloudflared:
-      image: cloudflare/cloudflared:2022.3.4
+      image: cloudflare/cloudflared:2025.8.1@sha256:b77d84e8704db38db22c22661cf7e56468c526e3a6a5fe9c8b7c151452fa1472
       user: root
       command: tunnel run
       volumes:
